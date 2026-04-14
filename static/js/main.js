@@ -19,7 +19,7 @@ $(document).ready(function () {
     $("#imageUpload").change(function () {
         $('.image-section').show();
         $('#btn-predict').show();
-        $('#result').text('');
+        $('#result').html('');
         $('#result').hide();
         readURL(this);
     });
@@ -50,8 +50,24 @@ $(document).ready(function () {
             async: true,
             success: function (data) {
                 // Get and display the result
+                var top3Html = '';
+                if (data.top3_crops && data.top3_crops.length > 0) {
+                    top3Html = '<div class="result-subtitle">Top 3 Crop Predictions</div><ol class="top3-list">';
+                    data.top3_crops.forEach(function (item) {
+                        top3Html += '<li><span class="crop-name">' + item.crop + '</span><span class="crop-confidence">' + item.confidence + '%</span></li>';
+                    });
+                    top3Html += '</ol>';
+                }
+
+                var resultHtml =
+                    '<div class="result-title">Prediction Result</div>' +
+                    '<div class="result-line"><strong>Crop:</strong> ' + data.predicted_crop + '</div>' +
+                    '<div class="result-line"><strong>Disease:</strong> ' + data.predicted_disease + '</div>' +
+                    '<div class="result-line"><strong>Confidence:</strong> ' + data.confidence + '%</div>' +
+                    top3Html;
+
                 $('#result').fadeIn(600);
-                $('#result').text(data);
+                $('#result').html(resultHtml);
                 console.log('Success!');
             },
             error: function (xhr) {

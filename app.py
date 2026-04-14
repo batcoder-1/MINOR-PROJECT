@@ -24,9 +24,27 @@ def model_predict(img_path, model):
     x = np.expand_dims(x, axis=0)
 
     preds = model.predict(x, verbose=0)
-    class_index = int(np.argmax(preds[0]))
+    scores = preds[0]
+    class_index = int(np.argmax(scores))
     class_name = CLASS_LABELS[class_index].split('___')
-    return class_name
+
+    crop_scores = {}
+    for index, score in enumerate(scores):
+        crop = CLASS_LABELS[index].split('___')[0]
+        crop_scores[crop] = crop_scores.get(crop, 0.0) + float(score)
+
+    top3_crops = sorted(crop_scores.items(), key=lambda item: item[1], reverse=True)[:3]
+    top3_crops_result = [
+        {'crop': crop, 'confidence': round(score * 100, 2)}
+        for crop, score in top3_crops
+    ]
+
+    return {
+        'predicted_crop': class_name[0],
+        'predicted_disease': class_name[1].title().replace('_', ' ') if len(class_name) > 1 else 'Unknown',
+        'confidence': round(float(scores[class_index]) * 100, 2),
+        'top3_crops': top3_crops_result
+    }
 
 
 @app.route('/')
@@ -53,11 +71,8 @@ def upload():
         file_path = os.path.join(upload_dir, secure_filename(f.filename))
         f.save(file_path)
 
-        class_name = model_predict(file_path, model)
-        crop = class_name[0]
-        disease = class_name[1].title().replace('_', ' ') if len(class_name) > 1 else 'Unknown'
-        result = f"Predicted Crop:{crop}  Predicted Disease:{disease}"
-        return result
+        prediction = model_predict(file_path, model)
+        return jsonify(prediction)
     except Exception as exc:
         return jsonify({'error': str(exc)}), 500
 
