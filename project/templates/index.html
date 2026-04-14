@@ -1,0 +1,109 @@
+{% extends "base.html" %} {% block content %}
+
+<section class="hero-panel reveal-up">
+    <div class="hero-copy">
+        <span class="eyebrow">Smart crop monitoring</span>
+        <h1 class="hero-title">Beautiful, fast leaf disease detection for field-ready decisions.</h1>
+        <p class="hero-subtitle">Upload a crop leaf image, preview it instantly, and get a model prediction without changing your existing workflow.</p>
+
+        <div class="hero-stats">
+            <article class="stat-card">
+                <span class="stat-value">14</span>
+                <span class="stat-label">Supported crops</span>
+            </article>
+            <article class="stat-card">
+                <span class="stat-value">38</span>
+                <span class="stat-label">Disease classes</span>
+            </article>
+            <article class="stat-card">
+                <span class="stat-value">1</span>
+                <span class="stat-label">Image to predict</span>
+            </article>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <div class="hero-preview-card floating-card">
+            <div class="preview-chip chip-live">Model ready</div>
+            <img class="hero-leaf-image" src="{{url_for('static', filename='strawberry-plant-leaf-spot.jpg')}}" alt="Leaf preview sample">
+            <div class="hero-preview-copy">
+                <h2>Leaf scan experience</h2>
+                <p>High-contrast UI, focused upload area, and smooth motion to keep attention on the prediction result.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="insight-grid">
+    <article class="info-card reveal-up">
+        <div class="card-badge">Coverage</div>
+        <h2 class="section-title">Supported Crops</h2>
+        <p class="section-text">The model has been trained on a fixed set of crop categories shown below.</p>
+        <img class="reference-image" src="{{url_for('static', filename='Screenshot_3.png')}}" alt="Supported crops">
+    </article>
+
+    <article class="info-card reveal-up">
+        <div class="card-badge">Prediction scope</div>
+        <h2 class="section-title">Supported Diseases</h2>
+        <p class="section-text">Predictions stay limited to the disease classes this model already knows.</p>
+        <img class="reference-image" src="{{url_for('static', filename='Screenshot_2.png')}}" alt="Supported crop diseases">
+    </article>
+ </section>
+
+<section class="workspace-card reveal-up">
+    <div class="workspace-copy">
+        <span class="eyebrow">Prediction workspace</span>
+        <h2 class="workspace-title">Upload a leaf image and run the model.</h2>
+        <p class="section-text">For better accuracy, use a bright and close-up image where the leaf details are clearly visible.</p>
+        <div class="workflow-points">
+            <span>Upload image</span>
+            <span>Review preview</span>
+            <span>Run prediction</span>
+        </div>
+    </div>
+
+    <div class="predictor-layout">
+        <article class="upload-panel">
+            <form id="upload-file" method="post" enctype="multipart/form-data" class="upload-form">
+                <label for="imageUpload" class="dropzone" id="dropzone">
+                    <span class="dropzone-icon">+</span>
+                    <span class="dropzone-copy">
+                        <strong>Select a leaf image</strong>
+                        <small>PNG, JPG, or JPEG format</small>
+                    </span>
+                </label>
+                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+            </form>
+
+            <div class="selected-file-meta" id="fileMeta">
+                <span class="meta-label">Selected file</span>
+                <span class="meta-value" id="fileName">No image selected yet</span>
+            </div>
+        </article>
+
+        <article class="preview-panel image-section" style="display:none;">
+            <div class="preview-header">
+                <div>
+                    <h3>Image preview</h3>
+                    <p>Check the uploaded leaf before prediction.</p>
+                </div>
+                <span class="preview-chip">Ready to predict</span>
+            </div>
+
+            <div class="img-preview">
+                <div id="imagePreview"></div>
+            </div>
+
+            <div class="action-row">
+                <button type="button" class="btn btn-success btn-lg" id="btn-predict">Predict Disease</button>
+            </div>
+        </article>
+    </div>
+
+    <div class="feedback-panel">
+        <div class="loader" style="display:none;"></div>
+        <h3 id="result" class="result-card"><span></span></h3>
+    </div>
+</section>
+
+{% endblock %}
