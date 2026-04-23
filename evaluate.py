@@ -16,6 +16,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, class
 from PIL import Image
 import argparse
 import json
+import sys
 
 
 # Class labels (same as in app.py)
@@ -46,10 +47,10 @@ def preprocess_image(img_path):
     """Load and preprocess a single image"""
     img = Image.open(img_path).convert('RGB').resize((224, 224))
     x = np.asarray(img, dtype=np.float32) / 255.0
-    return np.expand_dims(x, axis=0)
+    return x
 
 
-def get_predictions_from_directory(model, dataset_path):
+def get_predictions_from_directory(model, dataset_path, max_images_per_class=0):
     """
     Get predictions for all images in a directory structure.
     Directory structure should be: dataset_path/class_name/*.jpg
@@ -57,8 +58,23 @@ def get_predictions_from_directory(model, dataset_path):
     true_labels = []
     pred_labels = []
     
-    print(f"Processing images from {dataset_path}...")
+    print(f"Processing images from: {dataset_path}")
+    sys.stdout.flush()
+
+    total_images = 0
+    for class_name in CLASS_LABELS:
+        class_dir = os.path.join(dataset_path, class_name)
+        if os.path.exists(class_dir):
+            total_images += len([
+                f for f in os.listdir(class_dir)
+                if f.lower().endswith(('.jpg', '.jpeg', '.png'))
+            ])
+
+    print(f"Found {total_images} images across available classes.")
+    sys.stdout.flush()
     
+    processed = 0
+    batch_size = 32
     for class_idx, class_name in enumerate(CLASS_LABELS):
         class_dir = os.path.join(dataset_path, class_name)
         
@@ -73,18 +89,41 @@ def get_predictions_from_directory(model, dataset_path):
             continue
         
         print(f"Processing {len(image_files)} images from {class_name}...")
+        sys.stdout.flush()
         
+        if max_images_per_class and len(image_files) > max_images_per_class:
+            image_files = image_files[:max_images_per_class]
+
+        class_images = []
+        class_true_labels = []
+
         for img_file in image_files:
             img_path = os.path.join(class_dir, img_file)
             try:
-                x = preprocess_image(img_path)
-                preds = model.predict(x, verbose=0)
-                pred_class_idx = int(np.argmax(preds[0]))
-                
-                true_labels.append(class_idx)
-                pred_labels.append(pred_class_idx)
+                class_images.append(preprocess_image(img_path))
+                class_true_labels.append(class_idx)
             except Exception as e:
                 print(f"Error processing {img_path}: {e}")
+
+        if not class_images:
+            continue
+
+        class_images = np.array(class_images, dtype=np.float32)
+
+        for start in range(0, len(class_images), batch_size):
+            end = start + batch_size
+            batch_x = class_images[start:end]
+            batch_y = class_true_labels[start:end]
+            preds = model.predict(batch_x, verbose=0)
+            batch_pred_labels = np.argmax(preds, axis=1).tolist()
+
+            true_labels.extend(batch_y)
+            pred_labels.extend(batch_pred_labels)
+
+            processed += len(batch_y)
+            if processed % 25 == 0 or processed == total_images:
+                print(f"Processed {processed}/{total_images} images...")
+                sys.stdout.flush()
     
     return np.array(true_labels), np.array(pred_labels)
 
@@ -116,6 +155,8 @@ def main():
     parser = argparse.ArgumentParser(description='Evaluate crop disease detection model')
     parser.add_argument('--dataset_path', type=str, required=True,
                         help='Path to dataset directory (contains class subdirectories)')
+    parser.add_argument('--max_images_per_class', type=int, default=0,
+                        help='Optional limit per class for faster testing (0 = no limit)')
     parser.add_argument('--output_json', type=str, default='evaluation_results.json',
                         help='Output file for metrics (JSON format)')
     
@@ -124,12 +165,20 @@ def main():
     if not os.path.exists(args.dataset_path):
         print(f"Error: Dataset path {args.dataset_path} does not exist")
         return
+
+    if args.max_images_per_class < 0:
+        print("Error: --max_images_per_class must be 0 or a positive integer")
+        return
     
     # Load model
     model = load_model()
     
     # Get predictions
-    true_labels, pred_labels = get_predictions_from_directory(model, args.dataset_path)
+    true_labels, pred_labels = get_predictions_from_directory(
+        model,
+        args.dataset_path,
+        max_images_per_class=args.max_images_per_class,
+    )
     
     if len(true_labels) == 0:
         print("Error: No images were processed")

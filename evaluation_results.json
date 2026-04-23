@@ -1,0 +1,10 @@
+{
+  "accuracy": 0.9434210526315789,
+  "precision_weighted": 0.9498159588407402,
+  "precision_macro": 0.94981595884074,
+  "recall_weighted": 0.9434210526315789,
+  "recall_macro": 0.9434210526315789,
+  "total_images": 760,
+  "correct_predictions": 717,
+  "incorrect_predictions": 43
+}
