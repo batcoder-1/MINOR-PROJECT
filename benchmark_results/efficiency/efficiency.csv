@@ -1,0 +1,4 @@
+model,display_name,input_size,weights,params_total,params_trainable_when_loaded,weights_float32_mb,size_on_disk_mb,gflops_per_image,cpu_latency_median_ms,cpu_latency_p95_ms,cpu_latency_mean_ms,cpu_latency_std_ms,timed_runs,warmup_runs
+alexnet_existing,AlexNet (existing Model.hdf5),224,trained weights (Model.hdf5),28117790,4137038,112.47,129.11,2.08,11.26,12.38,11.36,0.42,100,10
+resnet50,ResNet-50,224,random init (architecture cost only),23665574,23612454,94.66,95.24,7.73,38.92,40.19,39.27,2.69,100,10
+efficientnet_b4,EfficientNet-B4,380,random init (architecture cost only),17741957,17616750,70.97,72.42,8.918,82.8,86.35,82.96,1.31,100,10

@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+# runtime / experiment outputs
+uploads/[0-9a-f]*_*
+benchmark_results/runs/
+severity_outputs/
+splits/*.tmp
+data/

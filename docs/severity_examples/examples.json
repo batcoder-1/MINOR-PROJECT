@@ -1,0 +1,101 @@
+{
+  "generated": "2026-11-03",
+  "model": "Model.hdf5 (sha256 cfd13975...)",
+  "note": "Real outputs of the deployed pipeline on the sample images in uploads/. Severity values are experimental HSV estimates, not validated against expert ratings.",
+  "examples": [
+    {
+      "image": "uploads/PotatoEarlyBlight1.JPG",
+      "panel": "PotatoEarlyBlight1_panel.jpg",
+      "predicted_class": "Potato___Early_blight",
+      "confidence": 99.25,
+      "severity_status": "estimated",
+      "severity_category": "Moderate",
+      "severity_percentage": 15.89,
+      "profile_validity": "heuristic",
+      "warnings": []
+    },
+    {
+      "image": "uploads/TomatoEarlyBlight5.JPG",
+      "panel": "TomatoEarlyBlight5_panel.jpg",
+      "predicted_class": "Tomato___Early_blight",
+      "confidence": 100.0,
+      "severity_status": "estimated",
+      "severity_category": "Mild",
+      "severity_percentage": 6.71,
+      "profile_validity": "heuristic",
+      "warnings": []
+    },
+    {
+      "image": "uploads/AppleCedarRust3.JPG",
+      "panel": "AppleCedarRust3_panel.jpg",
+      "predicted_class": "Apple___Cedar_apple_rust",
+      "confidence": 99.98,
+      "severity_status": "estimated",
+      "severity_category": "Mild",
+      "severity_percentage": 5.79,
+      "profile_validity": "heuristic",
+      "warnings": []
+    },
+    {
+      "image": "uploads/AppleCedarRust4.JPG",
+      "panel": "AppleCedarRust4_panel.jpg",
+      "predicted_class": "Apple___Cedar_apple_rust",
+      "confidence": 100.0,
+      "severity_status": "estimated",
+      "severity_category": "Moderate",
+      "severity_percentage": 23.53,
+      "profile_validity": "heuristic",
+      "warnings": []
+    },
+    {
+      "image": "uploads/CornCommonRust1.JPG",
+      "panel": "CornCommonRust1_panel.jpg",
+      "predicted_class": "Corn_(maize)___Common_rust_",
+      "confidence": 99.88,
+      "severity_status": "estimated",
+      "severity_category": "Mild",
+      "severity_percentage": 3.94,
+      "profile_validity": "heuristic",
+      "warnings": []
+    },
+    {
+      "image": "uploads/PotatoEarlyBlight3.JPG",
+      "panel": "PotatoEarlyBlight3_panel.jpg",
+      "predicted_class": "Potato___Early_blight",
+      "confidence": 84.0,
+      "severity_status": "estimated",
+      "severity_category": "Mild",
+      "severity_percentage": 0.68,
+      "profile_validity": "heuristic",
+      "warnings": []
+    },
+    {
+      "image": "uploads/AppleScab2.JPG",
+      "panel": "AppleScab2_panel.jpg",
+      "predicted_class": "Apple___Apple_scab",
+      "confidence": 78.06,
+      "severity_status": "estimated",
+      "severity_category": "Mild",
+      "severity_percentage": 1.2,
+      "profile_validity": "low",
+      "warnings": [
+        "Low-validity profile: Olive-green scab lesions overlap healthy leaf colour; severity is likely under-estimated."
+      ]
+    },
+    {
+      "image": "uploads/strawberry-plant-leaf-spot.jpg",
+      "panel": "strawberry-plant-leaf-spot_panel.jpg",
+      "predicted_class": "Strawberry___Leaf_scorch",
+      "confidence": 74.69,
+      "severity_status": "unreliable",
+      "severity_category": "Unknown",
+      "severity_percentage": null,
+      "profile_validity": "heuristic",
+      "warnings": [
+        "Leaf mask covers 96.3% of the image; the background was probably not separated.",
+        "Leaf mask touches 80% of the image border; the leaf could not be separated from surrounding foliage or background (typical of field photos).",
+        "Leaf segmentation is unreliable, so no severity percentage is reported."
+      ]
+    }
+  ]
+}

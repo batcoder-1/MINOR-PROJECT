@@ -3,7 +3,7 @@
 
 <section class="hero-card mb-4">
     <h1 class="hero-title">Plant Leaf Disease Analysis</h1>
-    <p class="hero-subtitle">Upload a clear crop leaf image and get a quick prediction of crop and disease class.</p>
+    <p class="hero-subtitle">Upload a clear crop leaf image to get the predicted crop and disease, an experimental severity estimate and advisory management guidance.</p>
 </section>
 
 <section class="row g-4 mb-4">
@@ -48,6 +48,93 @@
 
     <div class="loader" style="display:none;"></div>
     <h3 id="result"><span></span></h3>
+</section>
+
+<!-- Extended analysis (major project): filled by static/js/main.js from the /predict response -->
+<section id="analysis" class="analysis" style="display:none;">
+    <div id="analysis-warnings"></div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-12 col-lg-5">
+            <article class="content-card h-100">
+                <h2 class="section-title">1. Prediction</h2>
+                <div class="prediction-body">
+                    <img id="analysis-uploaded" class="uploaded-thumb" alt="Uploaded leaf image" />
+                    <div>
+                        <div class="kv"><span>Crop</span><strong id="pred-crop"></strong></div>
+                        <div class="kv"><span>Disease</span><strong id="pred-disease"></strong></div>
+                        <div class="kv"><span>Confidence</span><strong id="pred-confidence"></strong></div>
+                        <div class="confidence-bar"><div id="pred-confidence-bar"></div></div>
+                        <div id="pred-confidence-note" class="small-note"></div>
+                    </div>
+                </div>
+                <h3 class="sub-title">Top-3 disease classes</h3>
+                <ol id="pred-top3" class="plain-list numbered"></ol>
+            </article>
+        </div>
+        <div class="col-12 col-lg-7">
+            <article class="content-card h-100">
+                <h2 class="section-title">2. Severity estimate <span class="tag">experimental</span></h2>
+                <div class="severity-head">
+                    <span id="sev-badge" class="sev-badge"></span>
+                    <span id="sev-percentage" class="sev-percentage"></span>
+                </div>
+                <div id="sev-scale" class="sev-scale">
+                    <div class="sev-band mild"><span>Mild &lt; 10%</span></div>
+                    <div class="sev-band moderate"><span>Moderate 10&ndash;25%</span></div>
+                    <div class="sev-band severe"><span>Severe &gt; 25%</span></div>
+                    <div id="sev-marker" class="sev-marker"></div>
+                </div>
+                <div class="kv"><span>Status</span><strong id="sev-status"></strong></div>
+                <div class="kv"><span>Method</span><strong id="sev-method"></strong></div>
+                <p id="sev-note" class="small-note"></p>
+                <ul id="sev-warnings" class="plain-list warning-list"></ul>
+                <p class="small-note">Severity = lesion pixels &divide; leaf pixels &times; 100, from HSV colour segmentation. The bands are preliminary and have not been validated against expert ratings.</p>
+            </article>
+        </div>
+    </div>
+
+    <article id="viz-card" class="content-card mb-4">
+        <h2 class="section-title">3. Segmentation visualisation</h2>
+        <p class="section-text">Generated from your uploaded image by the HSV segmentation step (not by the CNN). Red = detected lesion pixels, yellow line = detected leaf boundary.</p>
+        <div class="viz-grid">
+            <figure><img id="viz-original" alt="Original image"/><figcaption>Original</figcaption></figure>
+            <figure><img id="viz-leaf" alt="Leaf mask"/><figcaption>Leaf mask</figcaption></figure>
+            <figure><img id="viz-lesion" alt="Lesion mask"/><figcaption>Lesion mask</figcaption></figure>
+            <figure><img id="viz-overlay" alt="Lesion overlay"/><figcaption>Overlay</figcaption></figure>
+        </div>
+    </article>
+
+    <article class="content-card mb-4">
+        <h2 class="section-title">4. Management guidance <span class="tag">advisory</span></h2>
+        <div id="treat-disease-info" class="disease-info"></div>
+        <div id="treat-expert" class="expert-box" style="display:none;"></div>
+        <div class="row g-4">
+            <div class="col-12 col-lg-6">
+                <div id="treat-management-block">
+                    <h3 class="sub-title">What to do now</h3>
+                    <ul id="treat-management" class="plain-list bullet"></ul>
+                </div>
+                <div id="treat-vector-block">
+                    <h3 class="sub-title">Vector management</h3>
+                    <ul id="treat-vector" class="plain-list bullet"></ul>
+                </div>
+                <h3 class="sub-title">Cultural practices</h3>
+                <ul id="treat-cultural" class="plain-list bullet"></ul>
+            </div>
+            <div class="col-12 col-lg-6">
+                <h3 class="sub-title">Preventive measures</h3>
+                <ul id="treat-preventive" class="plain-list bullet"></ul>
+                <h3 class="sub-title">Monitoring</h3>
+                <ul id="treat-monitoring" class="plain-list bullet"></ul>
+                <h3 class="sub-title">Chemical / treatment guidance</h3>
+                <div id="treat-chemical" class="chemical-box"></div>
+            </div>
+        </div>
+        <h3 class="sub-title">Sources</h3>
+        <ol id="treat-sources" class="plain-list numbered sources"></ol>
+        <div id="treat-disclaimer" class="disclaimer"></div>
+    </article>
 </section>
 
 {% endblock %}

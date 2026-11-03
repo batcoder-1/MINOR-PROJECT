@@ -1,0 +1,580 @@
+{
+  "Apple___Apple_scab": {
+    "pathogen": "Venturia inaequalis",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Superficial, velvety, dark olive-green to black spots on leaves (and fruit)",
+      "Lesions first seen on the lower leaf surface, olive green with indistinct margins; they darken and become more sharply defined with age",
+      "Heavily infected leaves may become distorted and drop early"
+    ],
+    "cultural_practices": [
+      "Rake up and destroy fallen leaves under apple and crabapple trees in autumn, because the fungus overwinters in dead leaves",
+      "Chopping fallen leaves with a mulching mower is acceptable if combined with a urea application to fall foliage (Ohio State)",
+      "A fall foliar application of zinc sulfate and urea hastens leaf fall and decomposition, reducing overwintering inoculum (UC IPM)",
+      "Choose a suitable site, space trees for air movement, and prune annually (Ohio State)"
+    ],
+    "preventive_practices": [
+      "Plant scab-resistant cultivars; Ohio State calls resistance the ideal management approach and lists cultivars with complete resistance (e.g. Enterprise, Freedom, Goldrush, Liberty, Pristine, Williams Pride)",
+      "Focus control on preventing primary spring infections; risk depends on leaf-wetness periods and temperature",
+      "Ornamental crabapples are also hosts and can harbour the disease"
+    ],
+    "chemical_management_generic": [
+      "Where resistant cultivars are not grown, fungicides are the primary control method (Ohio State)",
+      "Protective fungicides are applied from green tip onward, or timed by monitoring wetness periods (UC IPM)",
+      "Choose products by effectiveness, timing and mode of action, and rotate modes of action to manage fungicide resistance (UC IPM)",
+      "Protectant fungicides used by backyard growers generally need re-application after heavy rain (Ohio State)",
+      "Organic options mentioned include lime sulfur, sulfur and approved fixed-copper products (UC IPM)",
+      "Always read and follow the product label"
+    ],
+    "active_ingredients_named_by_source": [
+      "lime sulfur",
+      "sulfur",
+      "fenarimol",
+      "myclobutanil",
+      "triflumizole",
+      "tebuconazole",
+      "trifloxystrobin",
+      "difenoconazole",
+      "cyprodinil",
+      "fluopyram",
+      "pyraclostrobin",
+      "boscalid",
+      "pyrimethanil",
+      "kresoxim-methyl",
+      "thiophanate-methyl",
+      "captan",
+      "mancozeb",
+      "ziram",
+      "fixed copper"
+    ],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Apple Scab / Apple / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+        "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+        "url": "https://ipm.ucanr.edu/agriculture/apple/apple-scab/",
+        "fetched_ok": true
+      },
+      {
+        "title": "Scab of Apple (PLPATH-FRU-23)",
+        "organization": "Ohio State University Extension (Ohioline)",
+        "url": "https://ohioline.osu.edu/factsheet/plpath-fru-23",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "All active ingredients come from the UC IPM page (California, US registrations); each name was confirmed to appear on the page. Ohio State names no active ingredients. The UC IPM page also lists rates and intervals, which were deliberately left out. UMN Extension and UMass pages returned HTTP 403 and are not cited. The Ohio State cultivar list puts 'Redfree' under both complete and low resistance, an inconsistency in the source itself."
+  },
+  "Apple___Black_rot": {
+    "pathogen": "Botryosphaeria obtusa (Penn State lists it as Diplodia seriata, syn. B. obtusa)",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Leaf phase is called frogeye leaf spot: small purple specks or spots on upper leaf surfaces that enlarge into circular spots",
+      "Spots keep a purple margin while the centre turns brown, tan, yellowish-brown or light grey, giving a 'frogeye' look",
+      "Small black fruiting bodies (pycnidia) may form in the centres of older spots",
+      "Severe leaf infection can cause premature leaf drop"
+    ],
+    "cultural_practices": [
+      "Sanitation is the primary means of control: prune out cankers, dead branches and twigs, and remove dead wood from the orchard",
+      "Remove all mummified fruit from trees",
+      "Remove piles of prunings from the orchard perimeter or burn them (or chop them with a flail mower), because they are a major inoculum source (Ohio State)",
+      "Control fire blight by pruning out infected shoots and wood (Penn State; Ohio State)"
+    ],
+    "preventive_practices": [
+      "Keep trees healthy and vigorous and avoid tree stress; Ohio State calls this critical for controlling the canker phase",
+      "Prune annually and follow a balanced fertility programme based on soil and foliar analysis (Ohio State)",
+      "Neither source recommends resistant cultivars; Ohio State states all apple varieties appear equally susceptible to the fruit-rot phase"
+    ],
+    "chemical_management_generic": [
+      "Fungicides combined with good sanitation help control the fruit-rot phase",
+      "Fungicides are not effective against the canker phase on weakened trees (Ohio State)",
+      "Captan and strobilurin-containing (FRAC Group 11) fungicides are effective against black rot on fruit (Penn State)"
+    ],
+    "active_ingredients_named_by_source": [
+      "captan",
+      "strobilurin fungicides (FRAC Group 11) - a fungicide class, not a single active ingredient"
+    ],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Black Rot and Frogeye Leaf Spot of Apple (PLPATH-FRU-07)",
+        "organization": "Ohio State University Extension (Ohioline)",
+        "url": "https://ohioline.osu.edu/factsheet/plpath-fru-07",
+        "fetched_ok": true
+      },
+      {
+        "title": "Pome Fruit Disease - Black Rot and Frogeye Leaf Spot",
+        "organization": "Penn State Extension",
+        "url": "https://extension.psu.edu/pome-fruit-disease-black-rot-and-frogeye-leaf-spot",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "The PlantVillage class covers the leaf phase, frogeye leaf spot; both sources describe it. Penn State spells the pathogen 'obtuse' and the fungicide class 'strobulurin'; both are typos on the page. Ohio State says current spray recommendations are in its Bulletins 506 and 780, which were not fetched."
+  },
+  "Apple___Cedar_apple_rust": {
+    "pathogen": "Gymnosporangium juniperi-virginianae",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Small yellow (chlorotic) spots on apple leaves after spring infection",
+      "Spots turn yellow-orange to orange, swell, and develop a red border or ring",
+      "Tiny black dots (spermagonia) form in the centre of the lesion on the upper surface",
+      "By mid-summer, cup-like or tube-like structures (aecia) form on the undersides of mature lesions"
+    ],
+    "cultural_practices": [
+      "Remove galls from junipers before the orange telial horns form (Illinois)",
+      "Ohio State cautions that removing galls from a few trees will not reduce disease in an orchard when junipers are plentiful nearby",
+      "Ohio State says removing junipers or redcedars is no longer recommended, because it only works if the primary host is removed completely",
+      "Avoid planting junipers near an apple orchard (Ohio State)"
+    ],
+    "preventive_practices": [
+      "Buy or plant rust-resistant apple and crabapple cultivars (Illinois; Ohio State lists resistant crabapple cultivars)",
+      "Where junipers are planted, choose rust-resistant juniper species or cultivars (Ohio State lists them)",
+      "The fungus needs both a juniper or eastern redcedar host and an apple or crabapple host to complete its life cycle"
+    ],
+    "chemical_management_generic": [
+      "Check with a local Extension office or garden centre for recommended fungicides (Illinois)",
+      "Fungicides are often part of an apple disease programme (Ohio State)",
+      "Ohio State names sterol-inhibitor fungicides as the most effective class against cedar-apple rust",
+      "Always follow the label"
+    ],
+    "active_ingredients_named_by_source": [],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Cedar Apple Rust",
+        "organization": "Illinois Extension, University of Illinois",
+        "url": "https://extension.illinois.edu/plant-problems/cedar-apple-rust",
+        "fetched_ok": true
+      },
+      {
+        "title": "Cedar-Apple Rust",
+        "organization": "College of Food, Agricultural, and Environmental Sciences (CFAES), The Ohio State University",
+        "url": "https://cfaes.osu.edu/fact-sheet/cedar-apple-rust",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "Neither source names a specific active ingredient; Ohio State names only the class 'sterol inhibitors'. The two sources differ on alternate-host removal: Illinois recommends removing galls, while Ohio State says juniper removal is no longer recommended and gall removal alone has limited value. Advice should not say simply 'remove junipers'. UMN Extension returned 403 and Oklahoma State returned 403; neither is cited. The Ohio State URL is the redirect target of ohioline.osu.edu/factsheet/plpath-tree-10."
+  },
+  "Cherry_(including_sour)___Powdery_mildew": {
+    "pathogen": "Podosphaera clandestina (UC IPM); Utah State uses Podosphaera cerasi and says it was previously misidentified as P. clandestina",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Superficial, white, weblike growth on leaves, shoots or fruit (UC IPM)",
+      "Small circular leaf lesions, lighter green than the rest of the leaf; infected parts may curl slightly (USU)",
+      "Puckered, distorted, brittle leaves, with bronzed or necrotic areas later (USU)"
+    ],
+    "cultural_practices": [
+      "Remove root suckers in spring; their succulent foliage is highly susceptible (USU)",
+      "Thin dense canopies by pruning out unnecessary limbs where feasible (USU)",
+      "Keep tree height manageable so the sprayer can reach the canopy (USU)",
+      "Do not over-fertilize, to avoid excess vigour (USU)"
+    ],
+    "preventive_practices": [
+      "Some sweet cherry cultivars have some resistance (USU names Chelan, PMR-1, Hedelfingen, Regina, Venus); Montmorency tart cherry is highly susceptible and no resistant tart cherry is available",
+      "From early to mid-May, monitor leaves on suckers and on spurs in the lowest part of the crown (USU)",
+      "Disease is worst on new growth and in years with low rainfall, high humidity and warm temperatures (UC IPM)"
+    ],
+    "chemical_management_generic": [
+      "Chemical control is the primary means of management; early-season application matters most (USU)",
+      "Apply protective sprays starting soon after petal fall to protect fruit (UC IPM)",
+      "Treat immediately if mildew is found on leaves or shoots of inner scaffolds or water sprouts (UC IPM)",
+      "Sprays should target new foliage rather than the entire canopy (USU)",
+      "Rotate fungicides with different mode-of-action groups and avoid repeated use of chemically similar products, to limit resistance (UC IPM; USU)",
+      "In orchards with a history of mildew, select fungicides also active against brown rot and Botrytis (UC IPM)",
+      "Observe label pre-harvest restrictions"
+    ],
+    "active_ingredients_named_by_source": [
+      "azoxystrobin",
+      "difenoconazole (spelled 'difenconazole' on the UC IPM page)",
+      "propiconazole",
+      "tebuconazole",
+      "trifloxystrobin",
+      "fluopyram",
+      "pyraclostrobin",
+      "boscalid",
+      "penthiopyrad",
+      "triflumizole",
+      "myclobutanil",
+      "fenarimol",
+      "fenbuconazole",
+      "quinoxyfen",
+      "thiophanate-methyl",
+      "sulfur",
+      "lime sulfur",
+      "potassium bicarbonate",
+      "metconazole (USU)",
+      "metrafenone (USU)",
+      "flutianil (USU)"
+    ],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Powdery Mildew / Cherry / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+        "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+        "url": "https://ipm.ucanr.edu/agriculture/cherry/powdery-mildew/",
+        "fetched_ok": true
+      },
+      {
+        "title": "Cherry Powdery Mildew in Utah",
+        "organization": "Utah State University Extension (Plant Health / Utah Pests)",
+        "url": "https://extension.usu.edu/planthealth/research/cherry-powdery-mildew-in-utah",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "Active-ingredient names were checked word by word on both pages; names without a tag come from UC IPM, and those tagged (USU) appear only on the Utah page. USU also mentions captan and Bacillus biofungicides, but captan's role there is unclear, so it was left out. USU warns that chasmothecia late in the season mean fungicides are no longer effective. Spray timings ('2 to 3 weeks later', 'no more than twice a year') and all rates were deliberately left out. MSU Enviroweather/IPM pages returned empty content, and WSU Tree Fruit redirected to a 'temporarily unavailable' page; neither is cited."
+  },
+  "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+    "pathogen": "Cercospora zeae-maydis (CPN; UNL spells it Cercospora zea-maydis)",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Lesions appear first on the lower leaves",
+      "Long, narrow, rectangular lesions, light tan at first and later grey, bounded by leaf veins",
+      "Lesions can merge and kill entire leaves",
+      "Immature lesions can be confused with eyespot and anthracnose (UNL)"
+    ],
+    "cultural_practices": [
+      "The fungus survives in corn residue, so disease is often worse in corn planted after corn",
+      "Rotate to crops other than corn (UNL suggests at least one year in low-risk fields)",
+      "Tillage that buries residue and speeds its decomposition reduces fungal survival and risk"
+    ],
+    "preventive_practices": [
+      "Plant resistant or tolerant hybrids; UNL calls hybrid resistance the best option",
+      "Warm, humid weather favours infection, and disease severity depends on hybrid susceptibility and weather"
+    ],
+    "chemical_management_generic": [
+      "Foliar fungicides labeled for gray leaf spot are available (CPN)",
+      "Under high disease pressure, well-timed fungicide applications can greatly limit yield impact (UNL)"
+    ],
+    "active_ingredients_named_by_source": [],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Gray Leaf Spot of Corn",
+        "organization": "Crop Protection Network (CPN)",
+        "url": "https://cropprotectionnetwork.org/encyclopedia/gray-leaf-spot-of-corn",
+        "fetched_ok": true
+      },
+      {
+        "title": "Gray Leaf Spot",
+        "organization": "University of Nebraska-Lincoln CropWatch (IANR)",
+        "url": "https://cropwatch.unl.edu/plant-disease/corn/gray-leaf-spot/",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "Neither page names any fungicide active ingredient. The Indian sources could not be fetched: TNAU Agritech failed with an expired TLS certificate, and ICAR-IIMR and AICRP Maize domains failed DNS resolution from this environment."
+  },
+  "Corn_(maize)___Common_rust_": {
+    "pathogen": "Puccinia sorghi",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Chlorotic flecks on the leaf that develop into powdery, brick-red (golden-brown to cinnamon-brown) pustules",
+      "Oval to elongated pustules, sparse or clustered, on both leaf surfaces",
+      "Pustules turn black as the spores mature; surrounding tissue may yellow or die, and severe infection can kill leaves",
+      "Husks, leaf sheaths and stalks can also be infected"
+    ],
+    "cultural_practices": [
+      "Use furrow or drip irrigation instead of overhead sprinklers, since overhead watering and high humidity favour the disease (UC IPM, home garden)"
+    ],
+    "preventive_practices": [
+      "Resistant hybrids and inbreds are available (CPN); some resistant varieties may be available for home gardens (UC IPM)",
+      "Disease is favoured by cool-to-moderate temperatures and high humidity; CPN says it occurs every season but is seldom a concern in hybrid field corn, and is usually more severe on seed corn"
+    ],
+    "chemical_management_generic": [
+      "Foliar fungicides labeled for common rust are available (CPN)",
+      "Fungicides are generally not needed in home gardens (UC IPM)"
+    ],
+    "active_ingredients_named_by_source": [],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Common Rust of Corn",
+        "organization": "Crop Protection Network (CPN)",
+        "url": "https://cropprotectionnetwork.org/encyclopedia/common-rust-of-corn",
+        "fetched_ok": true
+      },
+      {
+        "title": "Common Rust on Corn",
+        "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources (Home and Landscape)",
+        "url": "https://ipm.ucanr.edu/home-and-landscape/common-rust-on-corn/",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "The CPN page gives no cultural or sanitation practices; the only cultural tip comes from the UC IPM home-garden page. Neither page names an active ingredient. Indian ICAR and TNAU sources were unreachable (DNS failure and expired certificate)."
+  },
+  "Corn_(maize)___Northern_Leaf_Blight": {
+    "pathogen": "Setosphaeria turcica (named by CPN); Exserohilum turcicum (named by UT Crops)",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Long, elliptical or cigar-shaped leaf lesions, grey-green at first, then pale grey or tan",
+      "Under moist conditions, dark grey spores form, mostly on the lower leaf surface, giving lesions a 'dirty' grey look",
+      "Mature lesions are tan with distinct dark zones of sporulation (UT)",
+      "On hybrids carrying an Ht resistance gene, lesions are smaller and chlorotic and often become linear streaks (CPN)"
+    ],
+    "cultural_practices": [
+      "The fungus overwinters in corn residue",
+      "Crop rotation and reducing surface residue by tillage can decrease inoculum (CPN)"
+    ],
+    "preventive_practices": [
+      "Grow resistant hybrids where the disease is a potential problem (CPN; UT)",
+      "Ht-gene (single-gene) resistance can be overcome by some pathogen races; polygenic resistance works against all races but is less complete (CPN)",
+      "Disease is most damaging with long dew periods and moderate temperatures (UT)"
+    ],
+    "chemical_management_generic": [
+      "Several foliar fungicides are labeled for northern corn leaf blight (CPN)",
+      "Foliar fungicides may be applied when lesions are first found, where practical (UT)"
+    ],
+    "active_ingredients_named_by_source": [],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Northern Corn Leaf Blight of Corn",
+        "organization": "Crop Protection Network (CPN)",
+        "url": "https://cropprotectionnetwork.org/encyclopedia/northern-corn-leaf-blight-of-corn",
+        "fetched_ok": true
+      },
+      {
+        "title": "Northern Corn Leaf Blight - UT Crops Pest Guides",
+        "organization": "University of Tennessee Institute of Agriculture (UTIA), Entomology & Plant Pathology",
+        "url": "https://guide.utcrops.com/corn/foliar-disease/northern-corn-leaf-blight/",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "In India this disease is called turcicum leaf blight (TLB). The two sources use different names for the same pathogen: CPN uses Setosphaeria turcica and UT uses Exserohilum turcicum. Neither page names an active ingredient. The CPN URL '/encyclopedia/northern-corn-leaf-blight' returns 404; the working URL ends in '-of-corn'. ICAR and TNAU pages were unreachable."
+  },
+  "Grape___Black_rot": {
+    "pathogen": "Guignardia bidwellii",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Reddish-brown, circular spots on the upper leaf surface (Penn State)",
+      "Spots begin as tiny yellow spots that grow to about 1/4 inch, with rusty-red centres (Iowa State)",
+      "Tiny black dots (pycnidia) form within the leaf spots",
+      "Infected berries turn dark brown and become covered with black pycnidia, eventually forming mummies"
+    ],
+    "cultural_practices": [
+      "Remove infected prunings and mummified berries, and burn or bury them before new growth begins in spring; the fungus overwinters in mummies and cane lesions",
+      "Prune and destroy diseased material while vines are dormant (Iowa State)",
+      "Rake up fallen berries under the vines in autumn (Iowa State)",
+      "Remove wild grapes nearby, because they can harbour the disease (Iowa State)"
+    ],
+    "preventive_practices": [
+      "Planting resistant varieties is strongly suggested (Penn State)",
+      "Promote canopy drying through pruning, training, row orientation and proper spacing (Iowa State)"
+    ],
+    "chemical_management_generic": [
+      "Where varieties are susceptible or black rot was a problem the previous year, time early-season fungicide sprays to prevent the earliest infections (Penn State)",
+      "Protecting fruit late in the season is very difficult once infections are numerous (Penn State)",
+      "In vineyards with past problems, Iowa State suggests a delayed-dormant spray (just before bud break) followed by a programme of preventive fungicide sprays"
+    ],
+    "active_ingredients_named_by_source": [
+      "mancozeb",
+      "captan",
+      "liquid lime sulfur (delayed-dormant spray)"
+    ],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Grape Disease - Black Rot",
+        "organization": "Penn State Extension",
+        "url": "https://extension.psu.edu/grape-disease-black-rot",
+        "fetched_ok": true
+      },
+      {
+        "title": "Black Rot of Grape",
+        "organization": "Iowa State University Extension and Outreach (Yard and Garden)",
+        "url": "https://yardandgarden.extension.iastate.edu/encyclopedia/black-rot-grape",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "All active ingredients come from the Iowa State page and were confirmed to appear there; Penn State names none. Iowa State gives a spray interval, which was deliberately left out."
+  },
+  "Grape___Esca_(Black_Measles)": {
+    "pathogen": "Complex of wood-infecting fungi: Phaeomoniella chlamydospora, Phaeoacremonium aleophilum (sexual stage Togninia minima) and other Phaeoacremonium spp.",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Interveinal 'tiger-stripe' discoloration on leaves, dark red in red cultivars and yellow in white cultivars, which then dries and becomes necrotic",
+      "Leaf symptoms are most common in mid-summer (UC IPM names July-August, California)",
+      "Mild symptoms can be confused with other diseases or nutritional deficiencies (FAMU)",
+      "Associated signs: small dark spots with a brown-purple ring on berries, and concentric rings of dark spots in cross-sections of canes, spurs, cordons or trunks"
+    ],
+    "cultural_practices": [
+      "Remove infected fruit before harvest and cultivate the vineyard to bury diseased tissue (FAMU)",
+      "UC IPM refers growers to its Eutypa dieback page for trunk-disease management practices (not fetched here)"
+    ],
+    "preventive_practices": [
+      "Protect pruning wounds from fungal infection so the fungi cannot colonize fresh wounds (FAMU)",
+      "Dormant pruning wounds are the infection sites and remain susceptible for several weeks after pruning, with susceptibility declining over time (UC IPM)"
+    ],
+    "chemical_management_generic": [
+      "Once a pruning wound is infected, the wood infection is permanent and localized and cannot be eradicated with fungicides (UC IPM)",
+      "There are presently no effective management strategies for black measles (FAMU)",
+      "Management therefore focuses on protecting fresh pruning wounds (FAMU), because established wood infections cannot be eradicated (UC IPM)"
+    ],
+    "active_ingredients_named_by_source": [],
+    "no_curative_chemical": true,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Esca (Black Measles) / Grape / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+        "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+        "url": "https://ipm.ucanr.edu/agriculture/grape/esca-black-measles/",
+        "fetched_ok": true
+      },
+      {
+        "title": "\"To do list\" for post-harvest vineyard management in Florida",
+        "organization": "Florida A&M University (FAMU) College of Agriculture and Food Sciences, Center for Viticulture & Small Fruit Research (Dr. James Obuya and Dr. Violeta Tsolova)",
+        "url": "https://cafs.famu.edu/departments-and-centers/research/center-for-viticulture-and-small-fruit-research/pdf/Post-Harvest-Vineyard-Management-fact-sheet.pdf",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "Esca is a grapevine trunk-disease complex; UC IPM groups it with Botryosphaeria, Eutypa and Phomopsis dieback. Neither source names a wound-protectant product, so none is recorded. The FAMU PDF is an undated short fact sheet; its fungicide list applies to the vineyard in general, not to esca. The MSU 'Grapevine decline or Esca' page returned empty content and ICAR-NRC Grapes was unreachable (DNS failure); neither is cited."
+  },
+  "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+    "pathogen": "Pseudocercospora vitis (formerly called Isariopsis leaf spot)",
+    "pathogen_type": "fungal",
+    "symptoms": [
+      "Large, irregularly shaped leaf spots, dull red to brown at first (FAMU)",
+      "Spots turn black and brittle with age (FAMU)",
+      "Most common late in the season, on poorly sprayed vines (FAMU)"
+    ],
+    "cultural_practices": [
+      "Increase air circulation so tissues dry faster, through pruning, thinning, spacing and weed management (Kentucky, general advice for grape leaf spots)",
+      "Promote vine vigour (Kentucky)",
+      "Keep areas around the vineyard free of weeds and tall grass to lower humidity and speed drying (FAMU, general vineyard advice)"
+    ],
+    "preventive_practices": [
+      "Apply fungicides, especially early-season sprays aimed at the primary grape diseases (Kentucky)",
+      "FAMU describes it as a minor disease that is most common late in the season on poorly sprayed grapes"
+    ],
+    "chemical_management_generic": [
+      "Kentucky recommends fungicide applications for grape leaf spots, especially early-season sprays targeting the primary grape diseases; no disease-specific spray guidance was found"
+    ],
+    "active_ingredients_named_by_source": [],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "\"To do list\" for post-harvest vineyard management in Florida",
+        "organization": "Florida A&M University (FAMU) College of Agriculture and Food Sciences, Center for Viticulture & Small Fruit Research",
+        "url": "https://cafs.famu.edu/departments-and-centers/research/center-for-viticulture-and-small-fruit-research/pdf/Post-Harvest-Vineyard-Management-fact-sheet.pdf",
+        "fetched_ok": true
+      },
+      {
+        "title": "Leaf Spots of Grapes",
+        "organization": "University of Kentucky, Martin-Gatton College of Agriculture, Food and Environment (Scouting Guide for Problems of Fruit)",
+        "url": "https://fruitscout.mgcafe.uky.edu/leaf-spots-grapes",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "This is the weakest-sourced class. Only FAMU describes this specific disease, in one short paragraph naming Pseudocercospora vitis. The Kentucky page covers grape leaf spots as a group (Cercospora, Septoria, Isariopsis/Pseudocercospora, Pestalotia), so its management advice is generic, not specific to this pathogen. The FAMU PDF lists vineyard fungicides (copper-based fungicides, captan, myclobutanil, ferbam, mancozeb, maneb, azoxystrobin) under general 'integrated disease management', not for leaf blight; they are not recorded here to avoid misattribution. No ICAR-NRC Grapes, TNAU, EDIS or UC IPM page on this disease could be found or fetched; ICAR and TNAU domains were unreachable. Wikipedia and journal papers were found but are not cited, per the source rules."
+  },
+  "Orange___Haunglongbing_(Citrus_greening)": {
+    "pathogen": "Candidatus Liberibacter asiaticus (CLas)",
+    "pathogen_type": "bacterial",
+    "symptoms": [
+      "Early leaf symptoms are vein yellowing and an asymmetrical chlorosis called 'blotchy mottle', the most diagnostic symptom, especially on sweet orange",
+      "Asymmetrical yellow mottling with patches of green; nutrient deficiencies usually cause more symmetrical yellowing (UC IPM)",
+      "Small, upright leaves with chlorotic patterns resembling zinc, iron or manganese deficiency; some leaves fully yellow or with green islands",
+      "Yellow shoots on one sector of the tree that spread through the canopy over years, plus twig dieback; fruit few, small, lopsided, green at the stylar end, with a bitter, salty taste"
+    ],
+    "cultural_practices": [
+      "Remove infected trees; UF/IFAS calls removal the only way to ensure they do not serve as a source of the bacterium, and UC IPM says HLB-infected trees must be destroyed",
+      "Before removal, treat infected trees to kill adult psyllids, so the psyllids do not disperse to new plantings (UF/IFAS, where HLB is not widespread)",
+      "Scout young plantings frequently and flag or map symptomatic trees for confirmation and removal (UF/IFAS)",
+      "Pruning out symptomatic limbs is not successful, because HLB is systemic and roots are infected before the canopy shows symptoms (UF/IFAS)",
+      "Provide balanced nutrition and frequent, small irrigations to support affected trees; UF/IFAS says this improves productivity but does not cure HLB"
+    ],
+    "preventive_practices": [
+      "Use certified disease-free nursery trees and clean budwood; HLB can be transmitted through infected budwood",
+      "Buy citrus only from reputable local nurseries, and do not move citrus plants or clippings out of quarantine areas (UC IPM)",
+      "Manage Asian citrus psyllid populations, especially on new flush; options include exclusion netting or individual protective covers for young trees, windbreaks, and natural enemies such as Tamarixia radiata (UF/IFAS)",
+      "Control ants on citrus trunks, because they protect psyllids from natural enemies (UC IPM)",
+      "Do not move psyllid host ornamentals such as orange jessamine (Murraya paniculata) out of affected areas (UF/IFAS)"
+    ],
+    "chemical_management_generic": [
+      "There is no cure or effective control method for HLB (UC IPM); chemical management targets the psyllid vector, not the bacterium",
+      "In mature groves, psyllid population reduction is mostly achieved with insecticides; rotate modes of action, because insecticide resistance has been detected (UF/IFAS)",
+      "Systemic insecticides have traditionally been used to keep psyllids off new flush of young trees (UF/IFAS)",
+      "Apply pesticides only after psyllids are found, and avoid bee-toxic insecticides during bloom (UC IPM, home growers)",
+      "UF/IFAS makes no formal recommendation on oxytetracycline trunk injection, because results are not consistent"
+    ],
+    "active_ingredients_named_by_source": [
+      "imidacloprid (UF/IFAS; UC IPM)",
+      "fenpropathrin (UF/IFAS)",
+      "carbaryl (UC IPM)",
+      "malathion (UC IPM)",
+      "beta-cyfluthrin (UC IPM)",
+      "horticultural spray oil (UC IPM)",
+      "neem oil (UC IPM)",
+      "insecticidal soap (UC IPM)",
+      "oxytetracycline (UF/IFAS - explicitly NOT formally recommended)"
+    ],
+    "no_curative_chemical": true,
+    "vector": "Asian citrus psyllid (Diaphorina citri Kuwayama)",
+    "sources": [
+      {
+        "title": "2026–2029 Florida Citrus Production Guide: Huanglongbing (Citrus Greening) (PP-225)",
+        "organization": "UF/IFAS Extension, University of Florida (EDIS / Ask IFAS)",
+        "url": "https://ask.ifas.ufl.edu/publication/CG086/pdf",
+        "fetched_ok": true
+      },
+      {
+        "title": "Asian Citrus Psyllid and Huanglongbing Disease (Pest Notes, UC ANR Publication 74155)",
+        "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+        "url": "https://ipm.ucanr.edu/PMG/PESTNOTES/pn74155.html",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "HLB is caused by a phloem-limited bacterium, not a fungus, so fungicides do not apply. All listed active ingredients are insecticides for the psyllid vector; none cures infected trees. UC IPM notes carbaryl is a restricted-use material in California. The UF/IFAS guide also names plant growth regulators (gibberellic acid, 2,4-D) with rates for HLB-affected trees; these were deliberately left out because they are not disease control and the source lists rates. The UC IPM Pest Note is dated 09/2018. ICAR-CCRI Nagpur (ccri.icar.gov.in) failed DNS resolution and is not cited, though a search snippet suggested a CCRI advisory stressing disease-free planting material, psyllid control and nutrition. The HTML version of the UF/IFAS page looped on redirects; the PDF was fetched and read in full."
+  },
+  "Peach___Bacterial_spot": {
+    "pathogen": "Xanthomonas arboricola pv. pruni (Clemson); Ohio State uses the older name Xanthomonas pruni",
+    "pathogen_type": "bacterial",
+    "symptoms": [
+      "Small, dark or reddish-purple leaf spots, often with a white centre (Clemson)",
+      "Spot centres drop out, leaving ragged 'shot-holes'",
+      "Heavily infected leaves turn yellow and drop early"
+    ],
+    "cultural_practices": [
+      "Destroy nearby wild or neglected stone fruit (Prunus species) (Ohio State)",
+      "Prune annually for air circulation and vigour, preferably in dry weather late in the dormant season (Ohio State)",
+      "Fertilize to keep shoot growth vigorous but not excessive; disease is more severe on poorly nourished trees or where nematodes are a problem (Ohio State; Clemson)"
+    ],
+    "preventive_practices": [
+      "Plant varieties with resistance; Clemson notes that moderately resistant varieties exist but none are immune (e.g. Redhaven, Loring, Belle of Georgia), and Ohio State lists Elberta and Suncrest as very susceptible",
+      "Avoid low-lying or shaded sites with poor air circulation and drainage (Ohio State)",
+      "Buy only vigorous, disease-free trees from a reputable nursery (Ohio State)"
+    ],
+    "chemical_management_generic": [
+      "No spray programme is completely effective against bacterial spot (Ohio State)",
+      "Chemical sprays are not practical for home gardeners or home orchards (Clemson; Ohio State)",
+      "Commercial growers should follow the current regional fruit pest management guide (Ohio State refers to Bulletin 506)"
+    ],
+    "active_ingredients_named_by_source": [
+      "copper (Clemson, Table 1: labeled for bacterial spot)"
+    ],
+    "no_curative_chemical": false,
+    "vector": null,
+    "sources": [
+      {
+        "title": "Bacterial Spot of Stone Fruits (PLPATH-FRU-38)",
+        "organization": "Ohio State University Extension (Ohioline)",
+        "url": "https://ohioline.osu.edu/factsheet/plpath-fru-38",
+        "fetched_ok": true
+      },
+      {
+        "title": "Peach Diseases (HGIC 2209)",
+        "organization": "Clemson University Cooperative Extension, Home & Garden Information Center",
+        "url": "https://hgic.clemson.edu/factsheet/peach-diseases/",
+        "fetched_ok": true
+      }
+    ],
+    "notes": "Clemson's table lists only copper for bacterial spot. Although no_curative_chemical is false, both sources stress that sprays give at best partial control; advice should avoid implying a chemical cure. The MSU bacterial spot page returned empty content and is not cited. The Clemson page lists more cultivars; only a few are reproduced here."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "machine": "Apple M1 Pro, 8 cores, macOS, TF 2.15.1 CPU",
+  "images": "the 15 sample images in uploads/, 3 passes each, after 1 warm-up",
+  "includes": "classification = model.predict() incl. PIL preprocessing; severity = segmentation + base64 visualisations; treatment = rule lookup",
+  "results": {
+    "classification": {
+      "median_ms": 30.9,
+      "max_ms": 36.8
+    },
+    "severity": {
+      "median_ms": 24.2,
+      "max_ms": 25.9
+    },
+    "treatment": {
+      "median_ms": 0.0,
+      "max_ms": 0.0
+    },
+    "total": {
+      "median_ms": 54.8,
+      "max_ms": 58.3
+    },
+    "severity_when_run": {
+      "median_ms": 24.5,
+      "max_ms": 25.9,
+      "n": 33
+    },
+    "n_requests": 45
+  }
+}

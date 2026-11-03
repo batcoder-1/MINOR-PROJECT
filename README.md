@@ -1,6 +1,38 @@
 # Crop-Disease-Detection
 App is Deployed on Heroku Server and can be used for image classification.
 
+## Major Project Extension (Semester 7)
+
+**Crop Disease Detection, Severity Estimation & Treatment Recommendation using Deep Learning.** The minor-project classifier is preserved unchanged. The extension adds:
+
+| Module | What it does | Docs |
+|---|---|---|
+| `severity/` | OpenCV/HSV leaf + lesion segmentation → lesion % → Mild / Moderate / Severe (experimental), with reliability checks and visualisations | [TECHNICAL_EXPLANATION.md](TECHNICAL_EXPLANATION.md) |
+| `treatment/` | Rule-based advisory engine over a sourced JSON knowledge base (38/38 classes, no doses) | [MAJOR_PROJECT_ARCHITECTURE.md](MAJOR_PROJECT_ARCHITECTURE.md) |
+| `benchmarking/` | AlexNet vs ResNet-50 vs EfficientNet-B4 on one shared split; metrics, latency, FLOPs, size | [EXPERIMENTAL_METHODOLOGY.md](EXPERIMENTAL_METHODOLOGY.md) |
+| `app.py` + UI | `/predict` returns the original fields plus severity, segmentation images and guidance | [MAJOR_PROJECT_ARCHITECTURE.md](MAJOR_PROJECT_ARCHITECTURE.md) |
+
+What is done and what is pending: [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md). Viva preparation: [DEFENSE_NOTES.md](DEFENSE_NOTES.md).
+
+### Quick start
+
+```bash
+# Python 3.9-3.11 is required (TensorFlow 2.15)
+python3.11 -m venv .venv && source .venv/bin/activate
+pip install -r requirements-dev.txt
+
+# Model.hdf5 is stored with Git LFS. A ZIP download contains only a 134-byte pointer:
+git lfs install && git lfs pull          # inside a git clone
+# or point to a downloaded copy:  export MODEL_PATH=/path/to/Model.hdf5
+
+python app.py                            # http://127.0.0.1:5000  (GET /health shows model status)
+pytest                                   # test suite (real-model tests need MODEL_PATH)
+python -m severity --image uploads/PotatoEarlyBlight1.JPG --label Potato___Early_blight --out_dir severity_outputs
+python -m benchmarking.benchmark --help
+```
+
+If `Model.hdf5` is still the LFS pointer, the app now starts anyway: `/predict` returns HTTP 503 with instructions instead of crashing.
+
 ## Local Setup (Modern Stack)
 
 - Python: 3.11+

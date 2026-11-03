@@ -1,0 +1,66 @@
+{
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "processor": "arm",
+    "python": "3.11.16",
+    "tensorflow": "2.15.1",
+    "cpu_count": 8,
+    "intra_op_threads": 0,
+    "inter_op_threads": 0
+  },
+  "results": [
+    {
+      "model": "alexnet_existing",
+      "display_name": "AlexNet (existing Model.hdf5)",
+      "input_size": 224,
+      "weights": "trained weights (Model.hdf5)",
+      "params_total": 28117790,
+      "params_trainable_when_loaded": 4137038,
+      "weights_float32_mb": 112.47,
+      "size_on_disk_mb": 129.11,
+      "gflops_per_image": 2.08,
+      "cpu_latency_median_ms": 11.26,
+      "cpu_latency_p95_ms": 12.38,
+      "cpu_latency_mean_ms": 11.36,
+      "cpu_latency_std_ms": 0.42,
+      "timed_runs": 100,
+      "warmup_runs": 10
+    },
+    {
+      "model": "resnet50",
+      "display_name": "ResNet-50",
+      "input_size": 224,
+      "weights": "random init (architecture cost only)",
+      "params_total": 23665574,
+      "params_trainable_when_loaded": 23612454,
+      "weights_float32_mb": 94.66,
+      "size_on_disk_mb": 95.24,
+      "gflops_per_image": 7.73,
+      "cpu_latency_median_ms": 38.92,
+      "cpu_latency_p95_ms": 40.19,
+      "cpu_latency_mean_ms": 39.27,
+      "cpu_latency_std_ms": 2.69,
+      "timed_runs": 100,
+      "warmup_runs": 10
+    },
+    {
+      "model": "efficientnet_b4",
+      "display_name": "EfficientNet-B4",
+      "input_size": 380,
+      "weights": "random init (architecture cost only)",
+      "params_total": 17741957,
+      "params_trainable_when_loaded": 17616750,
+      "weights_float32_mb": 70.97,
+      "size_on_disk_mb": 72.42,
+      "gflops_per_image": 8.918,
+      "cpu_latency_median_ms": 82.8,
+      "cpu_latency_p95_ms": 86.35,
+      "cpu_latency_mean_ms": 82.96,
+      "cpu_latency_std_ms": 1.31,
+      "timed_runs": 100,
+      "warmup_runs": 10
+    }
+  ],
+  "note": "FLOPs counted by the TF profiler (multiply-add = 2 FLOPs). Latency: batch 1, CPU, after warm-up; median of timed runs."
+}

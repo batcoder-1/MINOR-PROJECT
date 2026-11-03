@@ -1,0 +1,2261 @@
+{
+  "metadata": {
+    "name": "Crop disease treatment knowledge base",
+    "version": "1.0.0",
+    "created": "2026-11-03",
+    "num_entries": 38,
+    "review_status": "DRAFT - not yet reviewed by an agricultural expert",
+    "source_verification": "Each source URL was fetched and its content checked for the named disease on 2026-11-03. Practices are paraphrased from those pages; source tags in parentheses show which source states each item. Doses, rates, spray intervals and pre-harvest intervals were deliberately NOT recorded. Raw research records are in treatment/research/.",
+    "regional_note": "Indian sources (TNAU Agritech Portal, Punjab Agricultural University) were used where a page for the disease was found. ICAR institute websites could not be reached from the build environment, so most sources are US land-grant university extension services. Recommendations and active ingredients must be checked against ICAR / State Agricultural University packages of practices and CIB&RC label claims before use in India.",
+    "schema": {
+      "class_id": "index in labels.CLASS_LABELS (model output index)",
+      "pathogen_type": "fungal | oomycete | bacterial | viral | arthropod_pest | none",
+      "severity_recommendations": "mild / moderate / severe lists (non-systemic diseases)",
+      "management": "severity-independent management (systemic diseases: viral, HLB, esca)",
+      "chemical_guidance": "generic statements + active ingredients named by the cited source; never doses"
+    }
+  },
+  "disclaimer": "Advisory decision support only - not a prescription. The diagnosis comes from an image classifier trained on laboratory images (PlantVillage) and can be wrong; the severity value is an experimental colour-segmentation estimate. Guidance is summarised from the cited extension sources, has not yet been reviewed by an agricultural expert, and may not suit your region, crop stage or local regulations. Always follow the product label and the advice of your local agricultural officer or Krishi Vigyan Kendra (KVK).",
+  "decision_rules": {
+    "low_confidence_threshold": 60.0,
+    "description": "healthy -> preventive only; confidence < threshold -> no disease-specific or chemical advice; systemic diseases -> no curative chemical, removal + vector management; mild -> cultural + monitoring; moderate -> + disease-specific management and generic chemical guidance; severe -> + removal of heavily infected material + expert consultation; severity unknown -> moderate-level guidance + field inspection.",
+    "messages": {
+      "low_confidence": "The model is not confident about this identification. Disease-specific and chemical advice is withheld. Retake the photo (one leaf, plain background, even light) or ask an agricultural extension officer / KVK to confirm the diagnosis.",
+      "low_confidence_healthy": "The leaf was classified as healthy, but with low confidence. If you can see symptoms, retake the photo or ask an expert.",
+      "unknown_disease": "This class is not in the treatment knowledge base, so no specific guidance can be given. Consult an agricultural expert.",
+      "severity_unknown": "Severity could not be measured reliably from this image. Base management decisions on a field inspection of how much of the crop is affected.",
+      "chemical_not_indicated_healthy": "No treatment is indicated for a healthy leaf.",
+      "chemical_not_indicated_mild": "At mild severity this system recommends cultural practices and close monitoring first. If symptoms spread, re-assess or consult an expert before considering chemical control.",
+      "chemical_suppressed_low_confidence": "Withheld: chemical guidance requires a reliable diagnosis.",
+      "chemical_advisory": "Chemical control may be considered. This system does not prescribe products, doses or spray schedules. The cited sources describe the approaches below; use only products registered for this crop and disease and follow the label.",
+      "no_curative_chemical": "No chemical treatment cures this disease in an infected plant. Management relies on removing infected plants, preventing spread and, where relevant, controlling the vector.",
+      "label_compliance": "In India, use only pesticides with a CIB&RC-approved label claim for this crop and pest, and follow the label dose, interval and pre-harvest interval. Confirm with your local KVK or State Agricultural University extension service.",
+      "active_ingredient_caveat": "Active ingredients are listed only because the cited source names them; several sources are from outside India, and registration for this crop in India has not been verified. No dose or interval is given.",
+      "expert_severe": "Severe infection: consult an agricultural extension officer, KVK or plant-protection specialist before deciding on chemical control or plant removal.",
+      "expert_systemic": "Confirm the diagnosis with an expert (laboratory testing may be needed). Infected plants cannot be cured and may need to be removed."
+    },
+    "generic_practices": {
+      "monitoring": [
+        "Re-inspect the plant and its neighbours every few days and note whether symptoms are spreading.",
+        "Photograph the same leaves over time to compare progression."
+      ],
+      "low_confidence": [
+        "Retake the photo: a single leaf filling most of the frame, on a plain background, in even daylight without glare or strong shadows.",
+        "Avoid working among wet plants and clean hands and tools after handling affected plants, since many pathogens spread this way.",
+        "Ask an agricultural extension officer or KVK to confirm the diagnosis before any treatment."
+      ],
+      "unknown_disease": [
+        "Do not apply any treatment until the problem is identified.",
+        "Take a sample of affected leaves to a local extension officer, KVK or plant clinic."
+      ],
+      "severe_removal": [
+        "Remove heavily infected leaves or plants and take them out of the field (destroy them away from the crop) so they do not keep spreading the infection.",
+        "Clean tools and hands after handling infected material."
+      ]
+    }
+  },
+  "diseases": {
+    "Apple___Apple_scab": {
+      "class_id": 0,
+      "crop": "Apple",
+      "disease_name": "Apple scab",
+      "pathogen": "Venturia inaequalis",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Superficial, velvety, dark olive-green to black spots on leaves (and fruit)",
+        "Lesions first seen on the lower leaf surface, olive green with indistinct margins; they darken and become more sharply defined with age",
+        "Heavily infected leaves may become distorted and drop early"
+      ],
+      "cultural_practices": [
+        "Rake up and destroy fallen leaves under apple and crabapple trees in autumn, because the fungus overwinters in dead leaves",
+        "Chopping fallen leaves with a mulching mower is acceptable if combined with a urea application to fall foliage (Ohio State)",
+        "A fall foliar application of zinc sulfate and urea hastens leaf fall and decomposition, reducing overwintering inoculum (UC IPM)",
+        "Choose a suitable site, space trees for air movement, and prune annually (Ohio State)"
+      ],
+      "preventive_practices": [
+        "Plant scab-resistant cultivars; Ohio State calls resistance the ideal management approach and lists cultivars with complete resistance (e.g. Enterprise, Freedom, Goldrush, Liberty, Pristine, Williams Pride)",
+        "Focus control on preventing primary spring infections; risk depends on leaf-wetness periods and temperature",
+        "Ornamental crabapples are also hosts and can harbour the disease"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Rake up and destroy fallen leaves in autumn, because the fungus overwinters in dead leaves (UC IPM; Ohio State).",
+          "Prune annually and keep trees spaced for air movement so leaves dry quickly (Ohio State)."
+        ],
+        "moderate": [
+          "Where resistant cultivars are not grown, a protective fungicide programme timed to leaf-wetness periods is the primary control (Ohio State; UC IPM).",
+          "Rotate fungicide modes of action to manage resistance (UC IPM).",
+          "Continue leaf-litter sanitation to reduce next season's primary infections (UC IPM; Ohio State)."
+        ],
+        "severe": [
+          "Heavily infected leaves may distort and drop early; collect and destroy fallen leaves (Ohio State; UC IPM).",
+          "Plan for scab-resistant cultivars when replanting; Ohio State calls resistance the ideal management approach."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Where resistant cultivars are not grown, fungicides are the primary control method (Ohio State)",
+          "Protective fungicides are applied from green tip onward, or timed by monitoring wetness periods (UC IPM)",
+          "Choose products by effectiveness, timing and mode of action, and rotate modes of action to manage fungicide resistance (UC IPM)",
+          "Protectant fungicides used by backyard growers generally need re-application after heavy rain (Ohio State)",
+          "Organic options mentioned include lime sulfur, sulfur and approved fixed-copper products (UC IPM)",
+          "Always read and follow the product label"
+        ],
+        "active_ingredients_named_by_source": [
+          "lime sulfur",
+          "sulfur",
+          "fenarimol",
+          "myclobutanil",
+          "triflumizole",
+          "tebuconazole",
+          "trifloxystrobin",
+          "difenoconazole",
+          "cyprodinil",
+          "fluopyram",
+          "pyraclostrobin",
+          "boscalid",
+          "pyrimethanil",
+          "kresoxim-methyl",
+          "thiophanate-methyl",
+          "captan",
+          "mancozeb",
+          "ziram",
+          "fixed copper"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Apple Scab / Apple / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/apple/apple-scab/"
+        },
+        {
+          "title": "Scab of Apple (PLPATH-FRU-23)",
+          "organization": "Ohio State University Extension (Ohioline)",
+          "url": "https://ohioline.osu.edu/factsheet/plpath-fru-23"
+        }
+      ],
+      "research_notes": "All active ingredients come from the UC IPM page (California, US registrations); each name was confirmed to appear on the page. Ohio State names no active ingredients. The UC IPM page also lists rates and intervals, which were deliberately left out. UMN Extension and UMass pages returned HTTP 403 and are not cited. The Ohio State cultivar list puts 'Redfree' under both complete and low resistance, an inconsistency in the source itself."
+    },
+    "Apple___Black_rot": {
+      "class_id": 1,
+      "crop": "Apple",
+      "disease_name": "Black rot (frogeye leaf spot)",
+      "pathogen": "Botryosphaeria obtusa (Penn State lists it as Diplodia seriata, syn. B. obtusa)",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Leaf phase is called frogeye leaf spot: small purple specks or spots on upper leaf surfaces that enlarge into circular spots",
+        "Spots keep a purple margin while the centre turns brown, tan, yellowish-brown or light grey, giving a 'frogeye' look",
+        "Small black fruiting bodies (pycnidia) may form in the centres of older spots",
+        "Severe leaf infection can cause premature leaf drop"
+      ],
+      "cultural_practices": [
+        "Sanitation is the primary means of control: prune out cankers, dead branches and twigs, and remove dead wood from the orchard",
+        "Remove all mummified fruit from trees",
+        "Remove piles of prunings from the orchard perimeter or burn them (or chop them with a flail mower), because they are a major inoculum source (Ohio State)",
+        "Control fire blight by pruning out infected shoots and wood (Penn State; Ohio State)"
+      ],
+      "preventive_practices": [
+        "Keep trees healthy and vigorous and avoid tree stress; Ohio State calls this critical for controlling the canker phase",
+        "Prune annually and follow a balanced fertility programme based on soil and foliar analysis (Ohio State)",
+        "Neither source recommends resistant cultivars; Ohio State states all apple varieties appear equally susceptible to the fruit-rot phase"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Sanitation is the primary control: remove mummified fruit and dead wood from the tree (Ohio State; Penn State).",
+          "Keep trees vigorous and avoid stress (Ohio State)."
+        ],
+        "moderate": [
+          "Prune out cankers, dead branches and twigs, and remove pruning piles from the orchard perimeter (Ohio State).",
+          "Fungicides combined with good sanitation help control the fruit-rot phase (Ohio State; Penn State)."
+        ],
+        "severe": [
+          "Remove all mummified fruit and cankered wood; fungicides are not effective against the canker phase on weakened trees (Ohio State).",
+          "Control fire blight by pruning out infected shoots, because it creates entry points (Penn State; Ohio State)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Fungicides combined with good sanitation help control the fruit-rot phase",
+          "Fungicides are not effective against the canker phase on weakened trees (Ohio State)",
+          "Captan and strobilurin-containing (FRAC Group 11) fungicides are effective against black rot on fruit (Penn State)"
+        ],
+        "active_ingredients_named_by_source": [
+          "captan",
+          "strobilurin (FRAC Group 11) fungicide class"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Black Rot and Frogeye Leaf Spot of Apple (PLPATH-FRU-07)",
+          "organization": "Ohio State University Extension (Ohioline)",
+          "url": "https://ohioline.osu.edu/factsheet/plpath-fru-07"
+        },
+        {
+          "title": "Pome Fruit Disease - Black Rot and Frogeye Leaf Spot",
+          "organization": "Penn State Extension",
+          "url": "https://extension.psu.edu/pome-fruit-disease-black-rot-and-frogeye-leaf-spot"
+        }
+      ],
+      "research_notes": "The PlantVillage class covers the leaf phase, frogeye leaf spot; both sources describe it. Penn State spells the pathogen 'obtuse' and the fungicide class 'strobulurin'; both are typos on the page. Ohio State says current spray recommendations are in its Bulletins 506 and 780, which were not fetched."
+    },
+    "Apple___Cedar_apple_rust": {
+      "class_id": 2,
+      "crop": "Apple",
+      "disease_name": "Cedar apple rust",
+      "pathogen": "Gymnosporangium juniperi-virginianae",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Small yellow (chlorotic) spots on apple leaves after spring infection",
+        "Spots turn yellow-orange to orange, swell, and develop a red border or ring",
+        "Tiny black dots (spermagonia) form in the centre of the lesion on the upper surface",
+        "By mid-summer, cup-like or tube-like structures (aecia) form on the undersides of mature lesions"
+      ],
+      "cultural_practices": [
+        "Remove galls from junipers before the orange telial horns form (Illinois)",
+        "Ohio State cautions that removing galls from a few trees will not reduce disease in an orchard when junipers are plentiful nearby",
+        "Ohio State says removing junipers or redcedars is no longer recommended, because it only works if the primary host is removed completely",
+        "Avoid planting junipers near an apple orchard (Ohio State)"
+      ],
+      "preventive_practices": [
+        "Buy or plant rust-resistant apple and crabapple cultivars (Illinois; Ohio State lists resistant crabapple cultivars)",
+        "Where junipers are planted, choose rust-resistant juniper species or cultivars (Ohio State lists them)",
+        "The fungus needs both a juniper or eastern redcedar host and an apple or crabapple host to complete its life cycle"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "The fungus needs both a juniper/red-cedar host and an apple host to complete its life cycle; note junipers nearby (Ohio State).",
+          "Avoid planting junipers near apple trees (Ohio State)."
+        ],
+        "moderate": [
+          "Fungicides are often part of an apple disease programme; Ohio State names sterol-inhibitor fungicides as the most effective class (Ohio State; Illinois Extension).",
+          "Removing galls from junipers before the orange telial horns form can reduce inoculum on small properties (Illinois Extension)."
+        ],
+        "severe": [
+          "Plan for rust-resistant apple/crabapple cultivars (Illinois Extension; Ohio State).",
+          "Note: Ohio State advises that removing junipers is no longer recommended and that gall removal has limited value where junipers are plentiful."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Check with a local Extension office or garden centre for recommended fungicides (Illinois)",
+          "Fungicides are often part of an apple disease programme (Ohio State)",
+          "Ohio State names sterol-inhibitor fungicides as the most effective class against cedar-apple rust",
+          "Always follow the label"
+        ],
+        "active_ingredients_named_by_source": [],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Cedar Apple Rust",
+          "organization": "Illinois Extension, University of Illinois",
+          "url": "https://extension.illinois.edu/plant-problems/cedar-apple-rust"
+        },
+        {
+          "title": "Cedar-Apple Rust",
+          "organization": "College of Food, Agricultural, and Environmental Sciences (CFAES), The Ohio State University",
+          "url": "https://cfaes.osu.edu/fact-sheet/cedar-apple-rust"
+        }
+      ],
+      "research_notes": "Neither source names a specific active ingredient; Ohio State names only the class 'sterol inhibitors'. The two sources differ on alternate-host removal: Illinois recommends removing galls, while Ohio State says juniper removal is no longer recommended and gall removal alone has limited value. Advice should not say simply 'remove junipers'. UMN Extension returned 403 and Oklahoma State returned 403; neither is cited. The Ohio State URL is the redirect target of ohioline.osu.edu/factsheet/plpath-tree-10."
+    },
+    "Apple___healthy": {
+      "class_id": 3,
+      "crop": "Apple",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Rake up and destroy fallen leaves in autumn to reduce overwintering scab inoculum (UC IPM; Ohio State).",
+        "Prune annually for air movement and remove dead wood and mummified fruit (Ohio State).",
+        "Choose disease-resistant cultivars when planting (Ohio State; Illinois Extension)."
+      ],
+      "cultural_practices": [],
+      "sources": [
+        {
+          "title": "Apple Scab / Apple / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/apple/apple-scab/"
+        },
+        {
+          "title": "Scab of Apple (PLPATH-FRU-23)",
+          "organization": "Ohio State University Extension (Ohioline)",
+          "url": "https://ohioline.osu.edu/factsheet/plpath-fru-23"
+        },
+        {
+          "title": "Black Rot and Frogeye Leaf Spot of Apple (PLPATH-FRU-07)",
+          "organization": "Ohio State University Extension (Ohioline)",
+          "url": "https://ohioline.osu.edu/factsheet/plpath-fru-07"
+        },
+        {
+          "title": "Pome Fruit Disease - Black Rot and Frogeye Leaf Spot",
+          "organization": "Penn State Extension",
+          "url": "https://extension.psu.edu/pome-fruit-disease-black-rot-and-frogeye-leaf-spot"
+        },
+        {
+          "title": "Cedar Apple Rust",
+          "organization": "Illinois Extension, University of Illinois",
+          "url": "https://extension.illinois.edu/plant-problems/cedar-apple-rust"
+        },
+        {
+          "title": "Cedar-Apple Rust",
+          "organization": "College of Food, Agricultural, and Environmental Sciences (CFAES), The Ohio State University",
+          "url": "https://cfaes.osu.edu/fact-sheet/cedar-apple-rust"
+        }
+      ]
+    },
+    "Blueberry___healthy": {
+      "class_id": 4,
+      "crop": "Blueberry",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Scout plants regularly and act early if symptoms appear.",
+        "Remove plant debris and weeds that can harbour pests and pathogens.",
+        "Maintain balanced nutrition and irrigation, avoiding prolonged leaf wetness."
+      ],
+      "cultural_practices": [],
+      "sources": [],
+      "review_status": "Generic preventive practices; no crop-specific source verified (this crop has no disease class in the dataset)."
+    },
+    "Cherry_(including_sour)___Powdery_mildew": {
+      "class_id": 5,
+      "crop": "Cherry (including sour)",
+      "disease_name": "Powdery mildew",
+      "pathogen": "Podosphaera clandestina (UC IPM); Utah State uses Podosphaera cerasi and says it was previously misidentified as P. clandestina",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Superficial, white, weblike growth on leaves, shoots or fruit (UC IPM)",
+        "Small circular leaf lesions, lighter green than the rest of the leaf; infected parts may curl slightly (USU)",
+        "Puckered, distorted, brittle leaves, with bronzed or necrotic areas later (USU)"
+      ],
+      "cultural_practices": [
+        "Remove root suckers in spring; their succulent foliage is highly susceptible (USU)",
+        "Thin dense canopies by pruning out unnecessary limbs where feasible (USU)",
+        "Keep tree height manageable so the sprayer can reach the canopy (USU)",
+        "Do not over-fertilize, to avoid excess vigour (USU)"
+      ],
+      "preventive_practices": [
+        "Some sweet cherry cultivars have some resistance (USU names Chelan, PMR-1, Hedelfingen, Regina, Venus); Montmorency tart cherry is highly susceptible and no resistant tart cherry is available",
+        "From early to mid-May, monitor leaves on suckers and on spurs in the lowest part of the crown (USU)",
+        "Disease is worst on new growth and in years with low rainfall, high humidity and warm temperatures (UC IPM)"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Monitor leaves on root suckers and on spurs in the lowest part of the crown (Utah State).",
+          "Remove root suckers, whose succulent foliage is highly susceptible (Utah State)."
+        ],
+        "moderate": [
+          "Chemical control is the primary means of management and early-season applications matter most (Utah State); treat promptly if mildew is found on inner scaffolds or water sprouts (UC IPM).",
+          "Thin dense canopies by pruning and avoid over-fertilising (Utah State)."
+        ],
+        "severe": [
+          "Late in the season, once chasmothecia form, fungicides are no longer effective (Utah State); focus on sanitation and planning next season's early protection.",
+          "Rotate fungicide mode-of-action groups to limit resistance (UC IPM; Utah State)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Chemical control is the primary means of management; early-season application matters most (USU)",
+          "Apply protective sprays starting soon after petal fall to protect fruit (UC IPM)",
+          "Treat immediately if mildew is found on leaves or shoots of inner scaffolds or water sprouts (UC IPM)",
+          "Sprays should target new foliage rather than the entire canopy (USU)",
+          "Rotate fungicides with different mode-of-action groups and avoid repeated use of chemically similar products, to limit resistance (UC IPM; USU)",
+          "In orchards with a history of mildew, select fungicides also active against brown rot and Botrytis (UC IPM)",
+          "Observe label pre-harvest restrictions"
+        ],
+        "active_ingredients_named_by_source": [
+          "azoxystrobin",
+          "difenoconazole",
+          "propiconazole",
+          "tebuconazole",
+          "trifloxystrobin",
+          "fluopyram",
+          "pyraclostrobin",
+          "boscalid",
+          "penthiopyrad",
+          "triflumizole",
+          "myclobutanil",
+          "fenarimol",
+          "fenbuconazole",
+          "quinoxyfen",
+          "thiophanate-methyl",
+          "sulfur",
+          "lime sulfur",
+          "potassium bicarbonate",
+          "metconazole (USU)",
+          "metrafenone (USU)",
+          "flutianil (USU)"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Powdery Mildew / Cherry / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/cherry/powdery-mildew/"
+        },
+        {
+          "title": "Cherry Powdery Mildew in Utah",
+          "organization": "Utah State University Extension (Plant Health / Utah Pests)",
+          "url": "https://extension.usu.edu/planthealth/research/cherry-powdery-mildew-in-utah"
+        }
+      ],
+      "research_notes": "Active-ingredient names were checked word by word on both pages; names without a tag come from UC IPM, and those tagged (USU) appear only on the Utah page. USU also mentions captan and Bacillus biofungicides, but captan's role there is unclear, so it was left out. USU warns that chasmothecia late in the season mean fungicides are no longer effective. Spray timings ('2 to 3 weeks later', 'no more than twice a year') and all rates were deliberately left out. MSU Enviroweather/IPM pages returned empty content, and WSU Tree Fruit redirected to a 'temporarily unavailable' page; neither is cited."
+    },
+    "Cherry_(including_sour)___healthy": {
+      "class_id": 6,
+      "crop": "Cherry (including sour)",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Monitor suckers and low spurs for powdery mildew in spring (Utah State).",
+        "Avoid over-fertilising and thin dense canopies (Utah State)."
+      ],
+      "cultural_practices": [],
+      "sources": [
+        {
+          "title": "Powdery Mildew / Cherry / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/cherry/powdery-mildew/"
+        },
+        {
+          "title": "Cherry Powdery Mildew in Utah",
+          "organization": "Utah State University Extension (Plant Health / Utah Pests)",
+          "url": "https://extension.usu.edu/planthealth/research/cherry-powdery-mildew-in-utah"
+        }
+      ]
+    },
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+      "class_id": 7,
+      "crop": "Corn (maize)",
+      "disease_name": "Gray leaf spot (Cercospora leaf spot)",
+      "pathogen": "Cercospora zeae-maydis (CPN; UNL spells it Cercospora zea-maydis)",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Lesions appear first on the lower leaves",
+        "Long, narrow, rectangular lesions, light tan at first and later grey, bounded by leaf veins",
+        "Lesions can merge and kill entire leaves",
+        "Immature lesions can be confused with eyespot and anthracnose (UNL)"
+      ],
+      "cultural_practices": [
+        "The fungus survives in corn residue, so disease is often worse in corn planted after corn",
+        "Rotate to crops other than corn (UNL suggests at least one year in low-risk fields)",
+        "Tillage that buries residue and speeds its decomposition reduces fungal survival and risk"
+      ],
+      "preventive_practices": [
+        "Plant resistant or tolerant hybrids; UNL calls hybrid resistance the best option",
+        "Warm, humid weather favours infection, and disease severity depends on hybrid susceptibility and weather"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Lesions start on lower leaves; scout upward through the canopy (CPN).",
+          "Warm, humid weather favours infection; watch the crop during such spells (CPN; UNL)."
+        ],
+        "moderate": [
+          "Under high disease pressure, well-timed foliar fungicide applications can greatly limit yield impact (UNL).",
+          "Plan rotation away from corn, since the fungus survives in corn residue (CPN; UNL)."
+        ],
+        "severe": [
+          "Lesions can merge and kill entire leaves (CPN); consult an expert on whether a fungicide is still economically justified.",
+          "Bury or manage residue by tillage after harvest and use resistant hybrids next season (CPN; UNL)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Foliar fungicides labeled for gray leaf spot are available (CPN)",
+          "Under high disease pressure, well-timed fungicide applications can greatly limit yield impact (UNL)"
+        ],
+        "active_ingredients_named_by_source": [],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Gray Leaf Spot of Corn",
+          "organization": "Crop Protection Network (CPN)",
+          "url": "https://cropprotectionnetwork.org/encyclopedia/gray-leaf-spot-of-corn"
+        },
+        {
+          "title": "Gray Leaf Spot",
+          "organization": "University of Nebraska-Lincoln CropWatch (IANR)",
+          "url": "https://cropwatch.unl.edu/plant-disease/corn/gray-leaf-spot/"
+        }
+      ],
+      "research_notes": "Neither page names any fungicide active ingredient. The Indian sources could not be fetched: TNAU Agritech failed with an expired TLS certificate, and ICAR-IIMR and AICRP Maize domains failed DNS resolution from this environment."
+    },
+    "Corn_(maize)___Common_rust_": {
+      "class_id": 8,
+      "crop": "Corn (maize)",
+      "disease_name": "Common rust",
+      "pathogen": "Puccinia sorghi",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Chlorotic flecks on the leaf that develop into powdery, brick-red (golden-brown to cinnamon-brown) pustules",
+        "Oval to elongated pustules, sparse or clustered, on both leaf surfaces",
+        "Pustules turn black as the spores mature; surrounding tissue may yellow or die, and severe infection can kill leaves",
+        "Husks, leaf sheaths and stalks can also be infected"
+      ],
+      "cultural_practices": [
+        "Use furrow or drip irrigation instead of overhead sprinklers, since overhead watering and high humidity favour the disease (UC IPM, home garden)"
+      ],
+      "preventive_practices": [
+        "Resistant hybrids and inbreds are available (CPN); some resistant varieties may be available for home gardens (UC IPM)",
+        "Disease is favoured by cool-to-moderate temperatures and high humidity; CPN says it occurs every season but is seldom a concern in hybrid field corn, and is usually more severe on seed corn"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Common rust occurs every season but is seldom a concern in hybrid field corn (CPN).",
+          "Avoid overhead sprinkler irrigation in gardens (UC IPM home garden)."
+        ],
+        "moderate": [
+          "Foliar fungicides labelled for common rust are available (CPN); they are generally not needed in home gardens (UC IPM).",
+          "Disease is favoured by cool-to-moderate temperatures and high humidity (CPN)."
+        ],
+        "severe": [
+          "Severe infection can kill leaves (CPN); consult an expert, especially for seed-corn production where the disease is usually more severe.",
+          "Use resistant hybrids in future plantings (CPN)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Foliar fungicides labeled for common rust are available (CPN)",
+          "Fungicides are generally not needed in home gardens (UC IPM)"
+        ],
+        "active_ingredients_named_by_source": [],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Common Rust of Corn",
+          "organization": "Crop Protection Network (CPN)",
+          "url": "https://cropprotectionnetwork.org/encyclopedia/common-rust-of-corn"
+        },
+        {
+          "title": "Common Rust on Corn",
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources (Home and Landscape)",
+          "url": "https://ipm.ucanr.edu/home-and-landscape/common-rust-on-corn/"
+        }
+      ],
+      "research_notes": "The CPN page gives no cultural or sanitation practices; the only cultural tip comes from the UC IPM home-garden page. Neither page names an active ingredient. Indian ICAR and TNAU sources were unreachable (DNS failure and expired certificate)."
+    },
+    "Corn_(maize)___Northern_Leaf_Blight": {
+      "class_id": 9,
+      "crop": "Corn (maize)",
+      "disease_name": "Northern leaf blight (turcicum leaf blight)",
+      "pathogen": "Setosphaeria turcica (named by CPN); Exserohilum turcicum (named by UT Crops)",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Long, elliptical or cigar-shaped leaf lesions, grey-green at first, then pale grey or tan",
+        "Under moist conditions, dark grey spores form, mostly on the lower leaf surface, giving lesions a 'dirty' grey look",
+        "Mature lesions are tan with distinct dark zones of sporulation (UT)",
+        "On hybrids carrying an Ht resistance gene, lesions are smaller and chlorotic and often become linear streaks (CPN)"
+      ],
+      "cultural_practices": [
+        "The fungus overwinters in corn residue",
+        "Crop rotation and reducing surface residue by tillage can decrease inoculum (CPN)"
+      ],
+      "preventive_practices": [
+        "Grow resistant hybrids where the disease is a potential problem (CPN; UT)",
+        "Ht-gene (single-gene) resistance can be overcome by some pathogen races; polygenic resistance works against all races but is less complete (CPN)",
+        "Disease is most damaging with long dew periods and moderate temperatures (UT)"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Monitor lesion development, especially during long dew periods and moderate temperatures (UT Crops)."
+        ],
+        "moderate": [
+          "Foliar fungicides may be applied when lesions are first found, where practical; several are labelled for this disease (UT Crops; CPN).",
+          "Plan crop rotation and residue reduction by tillage, since the fungus overwinters in corn residue (CPN)."
+        ],
+        "severe": [
+          "Consult an expert on fungicide use and yield impact.",
+          "Grow resistant hybrids where the disease is a recurring problem (CPN; UT Crops)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Several foliar fungicides are labeled for northern corn leaf blight (CPN)",
+          "Foliar fungicides may be applied when lesions are first found, where practical (UT)"
+        ],
+        "active_ingredients_named_by_source": [],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Northern Corn Leaf Blight of Corn",
+          "organization": "Crop Protection Network (CPN)",
+          "url": "https://cropprotectionnetwork.org/encyclopedia/northern-corn-leaf-blight-of-corn"
+        },
+        {
+          "title": "Northern Corn Leaf Blight - UT Crops Pest Guides",
+          "organization": "University of Tennessee Institute of Agriculture (UTIA), Entomology & Plant Pathology",
+          "url": "https://guide.utcrops.com/corn/foliar-disease/northern-corn-leaf-blight/"
+        }
+      ],
+      "research_notes": "In India this disease is called turcicum leaf blight (TLB). The two sources use different names for the same pathogen: CPN uses Setosphaeria turcica and UT uses Exserohilum turcicum. Neither page names an active ingredient. The CPN URL '/encyclopedia/northern-corn-leaf-blight' returns 404; the working URL ends in '-of-corn'. ICAR and TNAU pages were unreachable."
+    },
+    "Corn_(maize)___healthy": {
+      "class_id": 10,
+      "crop": "Corn (maize)",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Plant resistant or tolerant hybrids (CPN; UNL).",
+        "Rotate away from continuous corn and manage residue, where leaf-blight and leaf-spot fungi survive (CPN; UNL)."
+      ],
+      "cultural_practices": [],
+      "sources": [
+        {
+          "title": "Gray Leaf Spot of Corn",
+          "organization": "Crop Protection Network (CPN)",
+          "url": "https://cropprotectionnetwork.org/encyclopedia/gray-leaf-spot-of-corn"
+        },
+        {
+          "title": "Gray Leaf Spot",
+          "organization": "University of Nebraska-Lincoln CropWatch (IANR)",
+          "url": "https://cropwatch.unl.edu/plant-disease/corn/gray-leaf-spot/"
+        },
+        {
+          "title": "Northern Corn Leaf Blight of Corn",
+          "organization": "Crop Protection Network (CPN)",
+          "url": "https://cropprotectionnetwork.org/encyclopedia/northern-corn-leaf-blight-of-corn"
+        },
+        {
+          "title": "Northern Corn Leaf Blight - UT Crops Pest Guides",
+          "organization": "University of Tennessee Institute of Agriculture (UTIA), Entomology & Plant Pathology",
+          "url": "https://guide.utcrops.com/corn/foliar-disease/northern-corn-leaf-blight/"
+        }
+      ]
+    },
+    "Grape___Black_rot": {
+      "class_id": 11,
+      "crop": "Grape",
+      "disease_name": "Black rot",
+      "pathogen": "Guignardia bidwellii",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Reddish-brown, circular spots on the upper leaf surface (Penn State)",
+        "Spots begin as tiny yellow spots that grow to about 1/4 inch, with rusty-red centres (Iowa State)",
+        "Tiny black dots (pycnidia) form within the leaf spots",
+        "Infected berries turn dark brown and become covered with black pycnidia, eventually forming mummies"
+      ],
+      "cultural_practices": [
+        "Remove infected prunings and mummified berries, and burn or bury them before new growth begins in spring; the fungus overwinters in mummies and cane lesions",
+        "Prune and destroy diseased material while vines are dormant (Iowa State)",
+        "Rake up fallen berries under the vines in autumn (Iowa State)",
+        "Remove wild grapes nearby, because they can harbour the disease (Iowa State)"
+      ],
+      "preventive_practices": [
+        "Planting resistant varieties is strongly suggested (Penn State)",
+        "Promote canopy drying through pruning, training, row orientation and proper spacing (Iowa State)"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Remove mummified berries and infected prunings, because the fungus overwinters in them (Penn State; Iowa State).",
+          "Promote canopy drying through pruning and training (Iowa State)."
+        ],
+        "moderate": [
+          "Early-season preventive fungicide sprays are recommended where varieties are susceptible or black rot occurred the previous year (Penn State; Iowa State).",
+          "Remove wild grapes nearby, which can harbour the disease (Iowa State)."
+        ],
+        "severe": [
+          "Protecting fruit late in the season is very difficult once infections are numerous (Penn State); prioritise thorough sanitation during dormancy.",
+          "Rake up fallen berries in autumn and prune out diseased material while vines are dormant (Iowa State)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Where varieties are susceptible or black rot was a problem the previous year, time early-season fungicide sprays to prevent the earliest infections (Penn State)",
+          "Protecting fruit late in the season is very difficult once infections are numerous (Penn State)",
+          "In vineyards with past problems, Iowa State suggests a delayed-dormant spray (just before bud break) followed by a programme of preventive fungicide sprays"
+        ],
+        "active_ingredients_named_by_source": [
+          "mancozeb",
+          "captan",
+          "liquid lime sulfur (delayed-dormant spray)"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Grape Disease - Black Rot",
+          "organization": "Penn State Extension",
+          "url": "https://extension.psu.edu/grape-disease-black-rot"
+        },
+        {
+          "title": "Black Rot of Grape",
+          "organization": "Iowa State University Extension and Outreach (Yard and Garden)",
+          "url": "https://yardandgarden.extension.iastate.edu/encyclopedia/black-rot-grape"
+        }
+      ],
+      "research_notes": "All active ingredients come from the Iowa State page and were confirmed to appear there; Penn State names none. Iowa State gives a spray interval, which was deliberately left out."
+    },
+    "Grape___Esca_(Black_Measles)": {
+      "class_id": 12,
+      "crop": "Grape",
+      "disease_name": "Esca (black measles)",
+      "pathogen": "Complex of wood-infecting fungi: Phaeomoniella chlamydospora, Phaeoacremonium aleophilum (sexual stage Togninia minima) and other Phaeoacremonium spp.",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Interveinal 'tiger-stripe' discoloration on leaves, dark red in red cultivars and yellow in white cultivars, which then dries and becomes necrotic",
+        "Leaf symptoms are most common in mid-summer (UC IPM names July-August, California)",
+        "Mild symptoms can be confused with other diseases or nutritional deficiencies (FAMU)",
+        "Associated signs: small dark spots with a brown-purple ring on berries, and concentric rings of dark spots in cross-sections of canes, spurs, cordons or trunks"
+      ],
+      "cultural_practices": [
+        "Remove infected fruit before harvest and cultivate the vineyard to bury diseased tissue (FAMU)",
+        "UC IPM refers growers to its Eutypa dieback page for trunk-disease management practices (not fetched here)"
+      ],
+      "preventive_practices": [
+        "Protect pruning wounds from fungal infection so the fungi cannot colonize fresh wounds (FAMU)",
+        "Dormant pruning wounds are the infection sites and remain susceptible for several weeks after pruning, with susceptibility declining over time (UC IPM)"
+      ],
+      "severity_recommendations": null,
+      "management": [
+        "Established wood infections cannot be eradicated with fungicides (UC IPM); management focuses on protecting fresh pruning wounds (FAMU).",
+        "Remove infected fruit before harvest and bury diseased tissue by cultivation (FAMU).",
+        "Mild leaf symptoms can be confused with other diseases or nutrient deficiencies; confirm the diagnosis (FAMU)."
+      ],
+      "vector_management": [],
+      "no_curative_chemical": true,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Once a pruning wound is infected, the wood infection is permanent and localized and cannot be eradicated with fungicides (UC IPM)",
+          "There are presently no effective management strategies for black measles (FAMU)",
+          "Management therefore focuses on protecting fresh pruning wounds (FAMU), because established wood infections cannot be eradicated (UC IPM)"
+        ],
+        "active_ingredients_named_by_source": [],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Esca (Black Measles) / Grape / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/grape/esca-black-measles/"
+        },
+        {
+          "title": "\"To do list\" for post-harvest vineyard management in Florida",
+          "organization": "Florida A&M University (FAMU) College of Agriculture and Food Sciences, Center for Viticulture & Small Fruit Research (Dr. James Obuya and Dr. Violeta Tsolova)",
+          "url": "https://cafs.famu.edu/departments-and-centers/research/center-for-viticulture-and-small-fruit-research/pdf/Post-Harvest-Vineyard-Management-fact-sheet.pdf"
+        }
+      ],
+      "research_notes": "Esca is a grapevine trunk-disease complex; UC IPM groups it with Botryosphaeria, Eutypa and Phomopsis dieback. Neither source names a wound-protectant product, so none is recorded. The FAMU PDF is an undated short fact sheet; its fungicide list applies to the vineyard in general, not to esca. The MSU 'Grapevine decline or Esca' page returned empty content and ICAR-NRC Grapes was unreachable (DNS failure); neither is cited."
+    },
+    "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+      "class_id": 13,
+      "crop": "Grape",
+      "disease_name": "Leaf blight (Isariopsis leaf spot)",
+      "pathogen": "Pseudocercospora vitis (formerly called Isariopsis leaf spot)",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Large, irregularly shaped leaf spots, dull red to brown at first (FAMU)",
+        "Spots turn black and brittle with age (FAMU)",
+        "Most common late in the season, on poorly sprayed vines (FAMU)"
+      ],
+      "cultural_practices": [
+        "Increase air circulation so tissues dry faster, through pruning, thinning, spacing and weed management (Kentucky, general advice for grape leaf spots)",
+        "Promote vine vigour (Kentucky)",
+        "Keep areas around the vineyard free of weeds and tall grass to lower humidity and speed drying (FAMU, general vineyard advice)"
+      ],
+      "preventive_practices": [
+        "Apply fungicides, especially early-season sprays aimed at the primary grape diseases (Kentucky)",
+        "FAMU describes it as a minor disease that is most common late in the season on poorly sprayed grapes"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Increase air circulation through pruning, thinning, spacing and weed management (University of Kentucky).",
+          "This is generally a minor, late-season disease on poorly sprayed vines (FAMU)."
+        ],
+        "moderate": [
+          "Fungicide programmes for grape leaf spots focus on early-season sprays aimed at the primary grape diseases (University of Kentucky); no disease-specific spray guidance was found.",
+          "Keep the vineyard floor free of weeds and tall grass to lower humidity (FAMU)."
+        ],
+        "severe": [
+          "Consult a viticulture expert; source guidance for this specific disease is limited."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Kentucky recommends fungicide applications for grape leaf spots, especially early-season sprays targeting the primary grape diseases; no disease-specific spray guidance was found"
+        ],
+        "active_ingredients_named_by_source": [],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "\"To do list\" for post-harvest vineyard management in Florida",
+          "organization": "Florida A&M University (FAMU) College of Agriculture and Food Sciences, Center for Viticulture & Small Fruit Research",
+          "url": "https://cafs.famu.edu/departments-and-centers/research/center-for-viticulture-and-small-fruit-research/pdf/Post-Harvest-Vineyard-Management-fact-sheet.pdf"
+        },
+        {
+          "title": "Leaf Spots of Grapes",
+          "organization": "University of Kentucky, Martin-Gatton College of Agriculture, Food and Environment (Scouting Guide for Problems of Fruit)",
+          "url": "https://fruitscout.mgcafe.uky.edu/leaf-spots-grapes"
+        }
+      ],
+      "review_status": "Weakest-sourced entry: only one source describes this specific disease.",
+      "research_notes": "This is the weakest-sourced class. Only FAMU describes this specific disease, in one short paragraph naming Pseudocercospora vitis. The Kentucky page covers grape leaf spots as a group (Cercospora, Septoria, Isariopsis/Pseudocercospora, Pestalotia), so its management advice is generic, not specific to this pathogen. The FAMU PDF lists vineyard fungicides (copper-based fungicides, captan, myclobutanil, ferbam, mancozeb, maneb, azoxystrobin) under general 'integrated disease management', not for leaf blight; they are not recorded here to avoid misattribution. No ICAR-NRC Grapes, TNAU, EDIS or UC IPM page on this disease could be found or fetched; ICAR and TNAU domains were unreachable. Wikipedia and journal papers were found but are not cited, per the source rules."
+    },
+    "Grape___healthy": {
+      "class_id": 14,
+      "crop": "Grape",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Remove mummified berries and infected prunings during dormancy (Penn State; Iowa State).",
+        "Promote canopy drying through pruning, training and spacing (Iowa State).",
+        "Protect fresh pruning wounds, the infection sites for trunk diseases (FAMU; UC IPM)."
+      ],
+      "cultural_practices": [],
+      "sources": [
+        {
+          "title": "Grape Disease - Black Rot",
+          "organization": "Penn State Extension",
+          "url": "https://extension.psu.edu/grape-disease-black-rot"
+        },
+        {
+          "title": "Black Rot of Grape",
+          "organization": "Iowa State University Extension and Outreach (Yard and Garden)",
+          "url": "https://yardandgarden.extension.iastate.edu/encyclopedia/black-rot-grape"
+        },
+        {
+          "title": "Esca (Black Measles) / Grape / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/grape/esca-black-measles/"
+        },
+        {
+          "title": "\"To do list\" for post-harvest vineyard management in Florida",
+          "organization": "Florida A&M University (FAMU) College of Agriculture and Food Sciences, Center for Viticulture & Small Fruit Research (Dr. James Obuya and Dr. Violeta Tsolova)",
+          "url": "https://cafs.famu.edu/departments-and-centers/research/center-for-viticulture-and-small-fruit-research/pdf/Post-Harvest-Vineyard-Management-fact-sheet.pdf"
+        }
+      ]
+    },
+    "Orange___Haunglongbing_(Citrus_greening)": {
+      "class_id": 15,
+      "crop": "Orange",
+      "disease_name": "Huanglongbing (citrus greening)",
+      "pathogen": "Candidatus Liberibacter asiaticus (CLas)",
+      "pathogen_type": "bacterial",
+      "vector": "Asian citrus psyllid (Diaphorina citri Kuwayama)",
+      "symptoms": [
+        "Early leaf symptoms are vein yellowing and an asymmetrical chlorosis called 'blotchy mottle', the most diagnostic symptom, especially on sweet orange",
+        "Asymmetrical yellow mottling with patches of green; nutrient deficiencies usually cause more symmetrical yellowing (UC IPM)",
+        "Small, upright leaves with chlorotic patterns resembling zinc, iron or manganese deficiency; some leaves fully yellow or with green islands",
+        "Yellow shoots on one sector of the tree that spread through the canopy over years, plus twig dieback; fruit few, small, lopsided, green at the stylar end, with a bitter, salty taste"
+      ],
+      "cultural_practices": [
+        "Remove infected trees; UF/IFAS calls removal the only way to ensure they do not serve as a source of the bacterium, and UC IPM says HLB-infected trees must be destroyed",
+        "Before removal, treat infected trees to kill adult psyllids, so the psyllids do not disperse to new plantings (UF/IFAS, where HLB is not widespread)",
+        "Scout young plantings frequently and flag or map symptomatic trees for confirmation and removal (UF/IFAS)",
+        "Pruning out symptomatic limbs is not successful, because HLB is systemic and roots are infected before the canopy shows symptoms (UF/IFAS)",
+        "Provide balanced nutrition and frequent, small irrigations to support affected trees; UF/IFAS says this improves productivity but does not cure HLB"
+      ],
+      "preventive_practices": [
+        "Use certified disease-free nursery trees and clean budwood; HLB can be transmitted through infected budwood",
+        "Buy citrus only from reputable local nurseries, and do not move citrus plants or clippings out of quarantine areas (UC IPM)",
+        "Manage Asian citrus psyllid populations, especially on new flush; options include exclusion netting or individual protective covers for young trees, windbreaks, and natural enemies such as Tamarixia radiata (UF/IFAS)",
+        "Control ants on citrus trunks, because they protect psyllids from natural enemies (UC IPM)",
+        "Do not move psyllid host ornamentals such as orange jessamine (Murraya paniculata) out of affected areas (UF/IFAS)"
+      ],
+      "severity_recommendations": null,
+      "management": [
+        "There is no cure for HLB (UC IPM). Removing infected trees is the only way to ensure they do not serve as a source of the bacterium (UF/IFAS).",
+        "Pruning out symptomatic limbs does not work, because HLB is systemic (UF/IFAS).",
+        "Balanced nutrition and frequent small irrigations can support affected trees but do not cure HLB (UF/IFAS).",
+        "Asymmetrical \"blotchy mottle\" can resemble nutrient deficiency; laboratory confirmation is advisable."
+      ],
+      "vector_management": [
+        "Manage the Asian citrus psyllid (Diaphorina citri), especially on new flush (UF/IFAS; UC IPM).",
+        "Before removing an infected tree, treat it to kill adult psyllids so they do not disperse (UF/IFAS).",
+        "Rotate insecticide modes of action, because psyllid resistance has been detected (UF/IFAS).",
+        "Control ants on citrus trunks, which protect psyllids from natural enemies (UC IPM)."
+      ],
+      "no_curative_chemical": true,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "There is no cure or effective control method for HLB (UC IPM); chemical management targets the psyllid vector, not the bacterium",
+          "In mature groves, psyllid population reduction is mostly achieved with insecticides; rotate modes of action, because insecticide resistance has been detected (UF/IFAS)",
+          "Systemic insecticides have traditionally been used to keep psyllids off new flush of young trees (UF/IFAS)",
+          "Apply pesticides only after psyllids are found, and avoid bee-toxic insecticides during bloom (UC IPM, home growers)",
+          "UF/IFAS makes no formal recommendation on oxytetracycline trunk injection, because results are not consistent"
+        ],
+        "active_ingredients_named_by_source": [
+          "imidacloprid (UF/IFAS; UC IPM)",
+          "fenpropathrin (UF/IFAS)",
+          "carbaryl (UC IPM)",
+          "malathion (UC IPM)",
+          "beta-cyfluthrin (UC IPM)",
+          "horticultural spray oil (UC IPM)",
+          "neem oil (UC IPM)",
+          "insecticidal soap (UC IPM)"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null,
+        "note": "All named chemicals are insecticides against the psyllid vector; none cures infected trees. UF/IFAS makes no formal recommendation on antibiotic trunk injection."
+      },
+      "sources": [
+        {
+          "title": "2026–2029 Florida Citrus Production Guide: Huanglongbing (Citrus Greening) (PP-225)",
+          "organization": "UF/IFAS Extension, University of Florida (EDIS / Ask IFAS)",
+          "url": "https://ask.ifas.ufl.edu/publication/CG086/pdf"
+        },
+        {
+          "title": "Asian Citrus Psyllid and Huanglongbing Disease (Pest Notes, UC ANR Publication 74155)",
+          "organization": "UC Statewide IPM Program, University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/PMG/PESTNOTES/pn74155.html"
+        }
+      ],
+      "research_notes": "HLB is caused by a phloem-limited bacterium, not a fungus, so fungicides do not apply. All listed active ingredients are insecticides for the psyllid vector; none cures infected trees. UC IPM notes carbaryl is a restricted-use material in California. The UF/IFAS guide also names plant growth regulators (gibberellic acid, 2,4-D) with rates for HLB-affected trees; these were deliberately left out because they are not disease control and the source lists rates. The UC IPM Pest Note is dated 09/2018. ICAR-CCRI Nagpur (ccri.icar.gov.in) failed DNS resolution and is not cited, though a search snippet suggested a CCRI advisory stressing disease-free planting material, psyllid control and nutrition. The HTML version of the UF/IFAS page looped on redirects; the PDF was fetched and read in full."
+    },
+    "Peach___Bacterial_spot": {
+      "class_id": 16,
+      "crop": "Peach",
+      "disease_name": "Bacterial spot",
+      "pathogen": "Xanthomonas arboricola pv. pruni (Clemson); Ohio State uses the older name Xanthomonas pruni",
+      "pathogen_type": "bacterial",
+      "vector": null,
+      "symptoms": [
+        "Small, dark or reddish-purple leaf spots, often with a white centre (Clemson)",
+        "Spot centres drop out, leaving ragged 'shot-holes'",
+        "Heavily infected leaves turn yellow and drop early"
+      ],
+      "cultural_practices": [
+        "Destroy nearby wild or neglected stone fruit (Prunus species) (Ohio State)",
+        "Prune annually for air circulation and vigour, preferably in dry weather late in the dormant season (Ohio State)",
+        "Fertilize to keep shoot growth vigorous but not excessive; disease is more severe on poorly nourished trees or where nematodes are a problem (Ohio State; Clemson)"
+      ],
+      "preventive_practices": [
+        "Plant varieties with resistance; Clemson notes that moderately resistant varieties exist but none are immune (e.g. Redhaven, Loring, Belle of Georgia), and Ohio State lists Elberta and Suncrest as very susceptible",
+        "Avoid low-lying or shaded sites with poor air circulation and drainage (Ohio State)",
+        "Buy only vigorous, disease-free trees from a reputable nursery (Ohio State)"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Maintain balanced fertility; disease is more severe on poorly nourished trees (Ohio State; Clemson).",
+          "Prune in dry weather late in the dormant season for air circulation (Ohio State)."
+        ],
+        "moderate": [
+          "No spray programme is completely effective, and sprays are not practical for home orchards (Ohio State; Clemson); commercial growers should follow the regional fruit pest management guide (Ohio State).",
+          "Destroy nearby wild or neglected stone-fruit trees (Ohio State)."
+        ],
+        "severe": [
+          "Heavily infected leaves turn yellow and drop (Clemson); consult an expert, as chemical control gives at best partial control.",
+          "Plan for more resistant varieties and avoid low, shaded, poorly drained sites (Clemson; Ohio State)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "No spray programme is completely effective against bacterial spot (Ohio State)",
+          "Chemical sprays are not practical for home gardeners or home orchards (Clemson; Ohio State)",
+          "Commercial growers should follow the current regional fruit pest management guide (Ohio State refers to Bulletin 506)"
+        ],
+        "active_ingredients_named_by_source": [
+          "copper"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Bacterial Spot of Stone Fruits (PLPATH-FRU-38)",
+          "organization": "Ohio State University Extension (Ohioline)",
+          "url": "https://ohioline.osu.edu/factsheet/plpath-fru-38"
+        },
+        {
+          "title": "Peach Diseases (HGIC 2209)",
+          "organization": "Clemson University Cooperative Extension, Home & Garden Information Center",
+          "url": "https://hgic.clemson.edu/factsheet/peach-diseases/"
+        }
+      ],
+      "research_notes": "Clemson's table lists only copper for bacterial spot. Although no_curative_chemical is false, both sources stress that sprays give at best partial control; advice should avoid implying a chemical cure. The MSU bacterial spot page returned empty content and is not cited. The Clemson page lists more cultivars; only a few are reproduced here."
+    },
+    "Peach___healthy": {
+      "class_id": 17,
+      "crop": "Peach",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Maintain balanced fertility and prune for air circulation (Ohio State).",
+        "Buy vigorous, disease-free trees and prefer more resistant varieties (Ohio State; Clemson)."
+      ],
+      "cultural_practices": [],
+      "sources": [
+        {
+          "title": "Bacterial Spot of Stone Fruits (PLPATH-FRU-38)",
+          "organization": "Ohio State University Extension (Ohioline)",
+          "url": "https://ohioline.osu.edu/factsheet/plpath-fru-38"
+        },
+        {
+          "title": "Peach Diseases (HGIC 2209)",
+          "organization": "Clemson University Cooperative Extension, Home & Garden Information Center",
+          "url": "https://hgic.clemson.edu/factsheet/peach-diseases/"
+        }
+      ]
+    },
+    "Pepper,_bell___Bacterial_spot": {
+      "class_id": 18,
+      "crop": "Pepper, bell",
+      "disease_name": "Bacterial spot",
+      "pathogen": "Xanthomonas euvesicatoria (primary; X. perforans and X. gardneri minor on pepper) per UF/IFAS; listed as Xanthomonas campestris pv. vesicatoria by UC IPM",
+      "pathogen_type": "bacterial",
+      "vector": null,
+      "symptoms": [
+        "Small, angular, water-soaked spots first visible on the lower leaf surface, later turning tan to brown and greasy-looking on the upper surface",
+        "Lesions expand and coalesce into large yellow and brown areas; leaf margins may look scorched",
+        "Premature leaf drop, even with moderate disease, exposing fruit to sunscald",
+        "Raised, brown, wart- or scab-like spots on fruit; elongated raised cankers on stems"
+      ],
+      "cultural_practices": [
+        "Destroy volunteers and host (tomato/pepper) crop debris before field preparation; rotate fields (UC IPM: out of peppers for at least 1 year)",
+        "Avoid overhead irrigation; use furrow or drip irrigation",
+        "Keep workers and equipment out of fields when foliage is wet; disinfect hand tools and equipment",
+        "Scout fields and transplant houses frequently; inspect transplants and use only healthy ones"
+      ],
+      "preventive_practices": [
+        "Choose varieties carrying bacterial spot resistance genes (e.g. Bs1-Bs4C, Bs7, BsT, bs5, bs6); some newer bell pepper varieties resist all known races",
+        "Use certified disease-free, indexed pathogen-negative or treated seed (the bacterium is seedborne)",
+        "Use disease-free transplants",
+        "Avoid unnecessary foliar or soil magnesium, which may increase bacterial spot severity (UF)"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Avoid overhead irrigation; use furrow or drip irrigation (UF/IFAS; UC IPM).",
+          "Keep workers and equipment out of the field when foliage is wet, and disinfect tools (UF/IFAS)."
+        ],
+        "moderate": [
+          "Copper bactericides have limited effectiveness because copper resistance is widespread; where copper is used it is combined with mancozeb (UF/IFAS; UC IPM).",
+          "UC IPM considers copper sprays justified only under high disease pressure."
+        ],
+        "severe": [
+          "Premature leaf drop exposes fruit to sunscald (UF/IFAS); consult an expert on whether sprays are still worthwhile.",
+          "After the season, destroy crop debris and volunteers and rotate out of pepper (UC IPM)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Copper bactericides have limited effectiveness because copper tolerance/resistance is widespread in pathogen populations (Florida and California)",
+          "When copper is used, combining it with a dithiocarbamate fungicide such as mancozeb is recommended",
+          "UC IPM considers copper sprays justified only under high disease pressure (e.g. sprinkler irrigation)",
+          "Biopesticides have limited, inconsistent efficacy and are not a replacement for copper-mancozeb programmes; use products with varying modes of action",
+          "Acibenzolar-S-methyl (a plant resistance inducer) is registered only for hot/non-bell peppers in the U.S. and is inefficient alone (UF)"
+        ],
+        "active_ingredients_named_by_source": [
+          "copper",
+          "mancozeb",
+          "acibenzolar-S-methyl"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "PP362/PP362: Bacterial Spot of Pepper",
+          "organization": "UF/IFAS Extension (EDIS), University of Florida",
+          "url": "https://ask.ifas.ufl.edu/publication/PP362"
+        },
+        {
+          "title": "Bacterial Spot / Peppers / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/peppers/bacterial-spot/"
+        }
+      ],
+      "research_notes": "The UC IPM URL was reached by redirect from https://ipm.ucanr.edu/PMG/r604100311.html. No TNAU page specific to bell pepper bacterial spot was found or checked. The acibenzolar-S-methyl registration point is U.S.-specific."
+    },
+    "Pepper,_bell___healthy": {
+      "class_id": 19,
+      "crop": "Pepper, bell",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Use certified disease-free or treated seed and healthy transplants (UF/IFAS; UC IPM).",
+        "Prefer drip or furrow irrigation over overhead irrigation (UF/IFAS; UC IPM)."
+      ],
+      "cultural_practices": [],
+      "sources": [
+        {
+          "title": "PP362/PP362: Bacterial Spot of Pepper",
+          "organization": "UF/IFAS Extension (EDIS), University of Florida",
+          "url": "https://ask.ifas.ufl.edu/publication/PP362"
+        },
+        {
+          "title": "Bacterial Spot / Peppers / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/peppers/bacterial-spot/"
+        }
+      ]
+    },
+    "Potato___Early_blight": {
+      "class_id": 20,
+      "crop": "Potato",
+      "disease_name": "Early blight",
+      "pathogen": "Alternaria solani",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Circular to angular dark brown/black necrotic leaf spots with concentric rings (target-board effect)",
+        "Symptoms appear first on the oldest foliage; mainly a disease of stressed or senescing plants",
+        "Spots coalesce and spread over the leaf; severely infected leaves yellow and drop",
+        "Infected tubers show a brown, corky dry rot"
+      ],
+      "cultural_practices": [
+        "Remove and destroy infected plant debris (spores and mycelium in soil/debris are the primary inoculum)",
+        "Maintain optimum growing conditions: proper fertilization, irrigation and management of other pests",
+        "Monitor routinely for symptoms and keep records"
+      ],
+      "preventive_practices": [
+        "Use disease-free seed tubers for planting",
+        "Grow later-maturing, longer-season varieties (UC IPM); TNAU notes Kufri Sindhuri has a fair degree of resistance",
+        "Disease is favoured by warm weather with intermittent rain or wet conditions, and by poorly manured, low-vigour crops"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Early blight mainly affects stressed or senescing plants; maintain proper fertilisation and irrigation (UC IPM; TNAU).",
+          "Monitor routinely for symptoms and keep records (UC IPM)."
+        ],
+        "moderate": [
+          "Fungicide application is justified only when disease starts early enough to cause economic loss (UC IPM); when justified, begin as soon as symptoms appear and continue protection (UC IPM; TNAU).",
+          "Remove and destroy infected plant debris (TNAU)."
+        ],
+        "severe": [
+          "Consult an expert on whether continued fungicide protection is economically justified.",
+          "Use disease-free seed tubers and consider more resistant varieties next season; TNAU notes Kufri Sindhuri has a fair degree of resistance."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Fungicide application is justified only when disease starts early enough to cause economic loss (UC IPM)",
+          "When justified, apply fungicides as soon as symptoms appear; protection must be continued",
+          "Very early protective spraying gives effective control (TNAU)"
+        ],
+        "active_ingredients_named_by_source": [
+          "zineb",
+          "captan",
+          "azoxystrobin",
+          "boscalid",
+          "chlorothalonil",
+          "famoxadone/cymoxanil",
+          "fenamidone",
+          "iprodione",
+          "mancozeb",
+          "pyraclostrobin"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Horticultural crops :: Vegetables :: Potato - Early blight: Alternaria solani",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/crop_prot_crop%20diseases_veg_potato_2.html"
+        },
+        {
+          "title": "Early Blight / Potato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/potato/early-blight/"
+        }
+      ],
+      "research_notes": "No ICAR-CPRI web page was verified; an ICAR-CPRI web search returned an API error and the follow-up search found only journal articles on epubs.icar.org.in, none fetched. Both sources give concentrations, rates or spray intervals; we left all of these out. The UC IPM active ingredients come from its treatment table."
+    },
+    "Potato___Late_blight": {
+      "class_id": 21,
+      "crop": "Potato",
+      "disease_name": "Late blight",
+      "pathogen": "Phytophthora infestans",
+      "pathogen_type": "oomycete",
+      "vector": null,
+      "symptoms": [
+        "Pale to dark green water-soaked, irregular leaf spots, often with a yellowish border, that enlarge and turn purple-brown to black",
+        "White sporulation (growth) on the leaf underside at lesion margins in humid weather",
+        "Brown to black lesions on petioles and stems, often at nodes, where stems may break and the plant topples",
+        "Tubers develop purplish-brown surface patches and a firm, rusty-brown decay spreading inward"
+      ],
+      "cultural_practices": [
+        "Destroy or deeply bury cull piles and infected tubers (e.g. near cold stores); eliminate volunteer potatoes",
+        "Hill / earth up properly so tubers are well covered and less exposed to sporangia washed down by rain",
+        "Destroy (dehaulm) blighted foliage before harvest, and let vines die completely well before harvest to protect tubers",
+        "Avoid tuber injuries at harvest; sort out and destroy visibly blighted tubers before storage",
+        "Use wider spacing and good air drainage so foliage dries; overhead sprinkler irrigation can favour the disease"
+      ],
+      "preventive_practices": [
+        "Plant only certified, disease-free seed tubers (infected seed tubers carry the disease from crop to crop)",
+        "Grow resistant/moderately resistant varieties: TNAU lists Kufri Naveen, Kufri Jeevan, Kufri Alankar ('Alenkar' on page), Kufri Khasi Garo, Kufri Moti; PAU lists Kufri Jyoti, Kufri Sutlej, Kufri Badshah and the CPRI-released Kufri Chipsona-1 and -2 as moderately resistant",
+        "Avoid highly susceptible or unknown varieties (PAU names Kufri Ashoka, Kufri Chandramukhi, Kufri Bahar and Kufri Pukhraj as highly susceptible)",
+        "Advance planting dates where early-sown crops escape epidemics (PAU, Punjab)",
+        "Disease is favoured by RH above 90%, mild temperatures, cool nights, cloudiness and rain"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Late blight is favoured by relative humidity above 90%, cool nights, cloudiness and rain (cited sources); inspect the crop frequently in such weather.",
+          "Eliminate volunteer potatoes and destroy cull piles (TNAU; UC IPM)."
+        ],
+        "moderate": [
+          "Protective fungicide sprays must be applied before or at the very start of infection; once infection is established, protectants alone become ineffective (PAU).",
+          "Good foliage coverage is essential, and neighbouring farmers should also spray to reduce area-wide inoculum (PAU).",
+          "Do not under-dose or prepare your own metalaxyl + mancozeb tank mixes, which can select resistant strains (PAU)."
+        ],
+        "severe": [
+          "Destroy (dehaulm) blighted foliage before harvest and let vines die completely well before harvest to protect tubers (TNAU; PAU).",
+          "Avoid tuber injury at harvest and sort out blighted tubers before storage (TNAU; PAU)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Protective (contact) fungicide sprays should be applied preventively, before disease appears",
+          "Once infection is established and symptoms have developed, protectant fungicides alone become ineffective (PAU)",
+          "In high-risk weather, systemic fungicides in pre-packed mixtures with protectants are used (PAU)",
+          "Do not underdose or use self-prepared metalaxyl + mancozeb tank mixes, since this can select resistant strains (PAU); strains resistant to mefenoxam are reported (UC IPM)",
+          "Good foliage coverage is essential; neighbouring farmers should also spray to reduce area-wide inoculum (PAU)"
+        ],
+        "active_ingredients_named_by_source": [
+          "mancozeb",
+          "zineb",
+          "chlorothalonil",
+          "propineb",
+          "mefenoxam (metalaxyl-M) + mancozeb",
+          "cymoxanil + mancozeb",
+          "fenamidone + mancozeb",
+          "mandipropamid",
+          "famoxadone + cymoxanil",
+          "azoxystrobin",
+          "cymoxanil",
+          "dimethomorph",
+          "fenamidone",
+          "mefenoxam/chlorothalonil",
+          "mefenoxam/copper",
+          "propamocarb hydrochloride",
+          "pyraclostrobin",
+          "phosphites"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Horticultural crops :: Vegetables :: Potato - Late blight of potato: Phytopthora infestans",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/crop_prot_crop%20diseases_veg_potato_1.html"
+        },
+        {
+          "title": "Web-Based Decision Support System for Late Blight Disease of Potato - Management of Late Blight",
+          "organization": "Punjab Agricultural University (PAU), Ludhiana",
+          "url": "https://pau.edu/potato/lb_mang.php"
+        },
+        {
+          "title": "Late Blight / Potato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/potato/late-blight/"
+        }
+      ],
+      "research_notes": "The PAU page's HTML title is just 'PAU'; its descriptive heading is in page_heading. TNAU misspells the pathogen 'Phytopthora'. No ICAR-CPRI page was fetched; PAU cites CPRI-released varieties. All three sources give doses, concentrations or spray schedules (PAU also gives trade names); we left all of these out. PAU's copper products are named only by trade name (Blitox-50, Markcopper), so no copper active ingredient is listed for PAU."
+    },
+    "Potato___healthy": {
+      "class_id": 22,
+      "crop": "Potato",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Plant certified, disease-free seed tubers (TNAU; PAU).",
+        "Destroy cull piles and volunteer potatoes (TNAU; UC IPM).",
+        "Prefer resistant or moderately resistant varieties suited to your region (TNAU; PAU)."
+      ],
+      "cultural_practices": [],
+      "sources": [
+        {
+          "title": "Horticultural crops :: Vegetables :: Potato - Late blight of potato: Phytopthora infestans",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/crop_prot_crop%20diseases_veg_potato_1.html"
+        },
+        {
+          "title": "Web-Based Decision Support System for Late Blight Disease of Potato - Management of Late Blight",
+          "organization": "Punjab Agricultural University (PAU), Ludhiana",
+          "url": "https://pau.edu/potato/lb_mang.php"
+        },
+        {
+          "title": "Late Blight / Potato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/potato/late-blight/"
+        },
+        {
+          "title": "Horticultural crops :: Vegetables :: Potato - Early blight: Alternaria solani",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/crop_prot_crop%20diseases_veg_potato_2.html"
+        },
+        {
+          "title": "Early Blight / Potato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/potato/early-blight/"
+        }
+      ]
+    },
+    "Raspberry___healthy": {
+      "class_id": 23,
+      "crop": "Raspberry",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Scout plants regularly and act early if symptoms appear.",
+        "Remove plant debris and weeds that can harbour pests and pathogens.",
+        "Maintain balanced nutrition and irrigation, avoiding prolonged leaf wetness."
+      ],
+      "cultural_practices": [],
+      "sources": [],
+      "review_status": "Generic preventive practices; no crop-specific source verified (this crop has no disease class in the dataset)."
+    },
+    "Soybean___healthy": {
+      "class_id": 24,
+      "crop": "Soybean",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Scout plants regularly and act early if symptoms appear.",
+        "Remove plant debris and weeds that can harbour pests and pathogens.",
+        "Maintain balanced nutrition and irrigation, avoiding prolonged leaf wetness."
+      ],
+      "cultural_practices": [],
+      "sources": [],
+      "review_status": "Generic preventive practices; no crop-specific source verified (this crop has no disease class in the dataset)."
+    },
+    "Squash___Powdery_mildew": {
+      "class_id": 25,
+      "crop": "Squash",
+      "disease_name": "Powdery mildew",
+      "pathogen": "Podosphaera xanthii (= Sphaerotheca fuliginea); also Golovinomyces cichoracearum (= Erysiphe cichoracearum), which UC IPM says is rare",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Pale yellow spots on stems, petioles and leaves, usually first on older leaves",
+        "Spots enlarge as white, powdery/talc-like mycelium and spores cover upper and lower leaf surfaces, petioles and stems",
+        "Affected leaves become dull and chlorotic, may wilt in afternoon heat, and eventually turn brown and papery"
+      ],
+      "cultural_practices": [
+        "Follow good sanitation practices and control weeds (the pathogens overwinter on weeds)",
+        "Plant in sunny sites and provide good air circulation; the disease is more common in shade",
+        "Avoid excess fertilizer; keep plants healthy and vigorous with balanced nutrition",
+        "Scout regularly from the vegetative stage through fruit development"
+      ],
+      "preventive_practices": [
+        "Plant resistant varieties (UConn lists resistant acorn, butternut, yellow squash and zucchini cultivars)",
+        "Keep monitoring resistant varieties, because resistance-breaking races exist (UC IPM)",
+        "Disease is favoured by moderate temperatures, high humidity without rainfall, and vigorous growth; spores are airborne over long distances"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Scout regularly from the vegetative stage through fruit development (UConn).",
+          "Avoid excess fertiliser and keep plants vigorous with balanced nutrition (UConn)."
+        ],
+        "moderate": [
+          "Treatment should begin when symptoms first appear and be repeated if symptoms return (UC IPM); UConn advises home gardeners to use chemicals only after other methods fail.",
+          "Alternate fungicide modes of action; strobilurin-resistant strains are widespread (UC IPM)."
+        ],
+        "severe": [
+          "Follow good sanitation and control weeds, on which the pathogens overwinter (UConn).",
+          "Plant resistant varieties next season and keep monitoring them, as resistance-breaking races exist (UConn; UC IPM)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Apply protectant fungicides (e.g. horticultural oils) to highly susceptible plants before disease appears, and sulfur or biological eradicants at the first signs (UConn)",
+          "Start treatment when symptoms first appear and repeat if symptoms return (UC IPM)",
+          "Strobilurin (FRAC 11)-resistant strains are widespread in California; alternate modes of action, especially with medium-to-high resistance-risk fungicides",
+          "UConn advises home gardeners to use chemical control only after other methods have failed"
+        ],
+        "active_ingredients_named_by_source": [
+          "azoxystrobin",
+          "myclobutanil",
+          "pyraclostrobin",
+          "pyraclostrobin/boscalid",
+          "trifloxystrobin",
+          "triflumizole",
+          "cinnamaldehyde",
+          "cyflufenamid",
+          "fluopyram/trifloxystrobin",
+          "micronized sulfur",
+          "penthiopyrad",
+          "potassium bicarbonate",
+          "quinoxyfen",
+          "sulfur",
+          "horticultural oils"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Powdery Mildew / Cucurbits / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/cucurbits/powdery-mildew/"
+        },
+        {
+          "title": "Powdery Mildew of Cucurbits | Home Garden Education Office | College of Agriculture, Health and Natural Resources | University of Connecticut",
+          "organization": "UConn Home and Garden Education Center, University of Connecticut",
+          "url": "https://homegarden.cahnr.uconn.edu/factsheets/powdery-mildew-of-cucurbits/"
+        }
+      ],
+      "research_notes": "Both sources cover cucurbits in general, including squash. UMass and UMN Extension pages returned HTTP 403 and were dropped. The UConn page does not name the pathogen species; the names come from UC IPM. UC IPM active ingredients come from its text and treatment table."
+    },
+    "Strawberry___Leaf_scorch": {
+      "class_id": 26,
+      "crop": "Strawberry",
+      "disease_name": "Leaf scorch",
+      "pathogen": "Diplocarpon earlianum (anamorph Marssonina fragariae); spelled 'Diplocarpon earliana' by Ohio State",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Numerous small, irregular dark purple spots/blotches scattered on the upper leaf surface",
+        "Spots enlarge and look like drops of tar (black fruiting bodies); centres stay purple (brownish per OSU) with no well-defined border",
+        "In heavy infections spots coalesce and the tissue turns purplish to bright red; leaves then brown, dry and curl at the margins (scorched look)",
+        "Elongate, sunken petiole lesions can girdle and kill leaves; runners, fruit stalks, fruit and caps can also be infected"
+      ],
+      "cultural_practices": [
+        "Remove foliage and crop residues after picking or at renovation to cut inoculum",
+        "Remove older and infected leaves from runner plants before setting",
+        "Control weeds (weeds slow leaf drying)",
+        "Avoid supplemental nitrogen in spring, which may enhance disease",
+        "Keep leaf wetness short: monitor irrigation and use drip rather than overhead irrigation where possible"
+      ],
+      "preventive_practices": [
+        "Use resistant cultivars; Ohio State calls this the most effective control and lists resistant June-bearing and tolerant everbearing varieties",
+        "Choose sites with good air drainage and full sun; plant in light, well-drained soil",
+        "Allow adequate spacing between plants/runners to increase airflow",
+        "Replant with new transplants frequently (matted-row/perennial systems)"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Keep leaf wetness short: use drip rather than overhead irrigation where possible (NC State).",
+          "Control weeds, which slow leaf drying (NC State)."
+        ],
+        "moderate": [
+          "Fungicides help control leaf diseases, but the emphasis should be on resistant varieties (Ohio State); NC State notes treatments are effective during flowering and in late summer/fall.",
+          "Avoid supplemental nitrogen in spring (NC State)."
+        ],
+        "severe": [
+          "Remove foliage and crop residues after picking or at renovation to reduce inoculum (NC State; Ohio State).",
+          "Replant with new, resistant transplants (Ohio State; NC State)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Fungicides help control leaf diseases, but the emphasis should be on resistant varieties (OSU)",
+          "Fungicide treatments are effective during flowering and during late summer and fall (NC State)",
+          "In annual plasticulture systems the disease generally does not cause economic damage or need action (NC State)",
+          "Consult regional strawberry IPM / fruit pest management guides for current products"
+        ],
+        "active_ingredients_named_by_source": [],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Leaf Scorch of Strawberry | NC State Extension Publications",
+          "organization": "NC State Extension, North Carolina State University",
+          "url": "https://content.ces.ncsu.edu/leaf-scorch-of-strawberry"
+        },
+        {
+          "title": "Strawberry Leaf Diseases | Ohioline",
+          "organization": "Ohio State University Extension (Ohioline), College of Food, Agricultural, and Environmental Sciences",
+          "url": "https://ohioline.osu.edu/factsheet/plpath-fru-35"
+        }
+      ],
+      "research_notes": "No TNAU or ICAR page was found. NC State says leaf scorch symptoms cannot be told apart from those caused by Marssonina canadensis and can be confused with powdery mildew (Podosphaera aphanis) and early common leaf spot (Mycosphaerella). Neither page names fungicide active ingredients. The Ohio State page also covers leaf spot and leaf blight; only the leaf scorch content and the shared controls were used."
+    },
+    "Strawberry___healthy": {
+      "class_id": 27,
+      "crop": "Strawberry",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Use resistant cultivars and drip rather than overhead irrigation (Ohio State; NC State).",
+        "Remove old foliage at renovation and control weeds (NC State)."
+      ],
+      "cultural_practices": [],
+      "sources": [
+        {
+          "title": "Leaf Scorch of Strawberry | NC State Extension Publications",
+          "organization": "NC State Extension, North Carolina State University",
+          "url": "https://content.ces.ncsu.edu/leaf-scorch-of-strawberry"
+        },
+        {
+          "title": "Strawberry Leaf Diseases | Ohioline",
+          "organization": "Ohio State University Extension (Ohioline), College of Food, Agricultural, and Environmental Sciences",
+          "url": "https://ohioline.osu.edu/factsheet/plpath-fru-35"
+        }
+      ]
+    },
+    "Tomato___Bacterial_spot": {
+      "class_id": 28,
+      "crop": "Tomato",
+      "disease_name": "Bacterial spot",
+      "pathogen": "Xanthomonas campestris pv. vesicatoria (UC IPM); Xanthomonas axonopodis pv. vesicatoria (TNAU)",
+      "pathogen_type": "bacterial",
+      "vector": null,
+      "symptoms": [
+        "Small, brown, water-soaked circular leaf spots with a yellow halo; older leaves affected first",
+        "Spots turn from yellow/light green to dark brown or black; older spots slightly raised and superficial",
+        "Larger blotches can form, especially along leaf margins; defoliation of older leaves (severe on seedlings)",
+        "Fruit spots start small and water-soaked, then become brown, raised/sunken and scabby"
+      ],
+      "cultural_practices": [
+        "Avoid sprinkler (overhead) irrigation; secondary spread is by splashing water and rain",
+        "Keep cull piles away from greenhouse and field operations",
+        "Rotate with a non-host crop",
+        "Remove/destroy infected crop debris, volunteer tomatoes and weed hosts such as nightshade and groundcherry (bacterium persists on these)"
+      ],
+      "preventive_practices": [
+        "Use pathogen-free / disease-free seed (the bacterium is seedborne, inside and on the seed surface)",
+        "Use disease-free transplants; described by UC IPM as the best way to avoid the disease",
+        "Disease is favoured by moist weather, splashing rain, high humidity or persistent dew; warm temperatures speed symptom development"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Avoid sprinkler (overhead) irrigation; the bacterium spreads by splashing water (UC IPM).",
+          "Remove volunteer tomatoes and weed hosts such as nightshade (UC IPM)."
+        ],
+        "moderate": [
+          "Copper-containing bactericides give only partial control and act strictly as protectants; copper resistance occurs, and combining copper with mancozeb can partly overcome it (UC IPM).",
+          "TNAU's integrated management also lists a Streptocycline spray together with disease-free seed (TNAU)."
+        ],
+        "severe": [
+          "Defoliation of older leaves can be severe (UC IPM); consult an expert on whether sprays are still worthwhile.",
+          "After the crop, remove and destroy infected debris and rotate with a non-host crop (UC IPM)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Copper-containing bactericides give only partial control",
+          "Copper is strictly a protectant and must be applied before an infection period occurs",
+          "Copper resistance has been observed in the pathogen; combining copper with mancozeb can partly overcome it",
+          "Some copper formulations are acceptable for certified organic production",
+          "TNAU's integrated management lists a Streptocycline spray alongside disease-free seed"
+        ],
+        "active_ingredients_named_by_source": [
+          "copper hydroxide",
+          "mancozeb",
+          "Streptocycline (as named by TNAU)"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Bacterial Spot / Tomato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/tomato/bacterial-spot/"
+        },
+        {
+          "title": "Horticultural crops :: Vegetables :: Tomato - Bacterial leaf spot: Xanthomonas axonopodis pv. vesicatoria",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_11.html"
+        }
+      ],
+      "research_notes": "The two sources use older pathovar names. UF/IFAS EDIS PP362 (fetched for the pepper entry) says that in tomato X. euvesicatoria is 'just one of four species that cause bacterial spot'. TNAU gives a Streptocycline concentration and per-acre amount; we left both out as instructed. UC IPM's spray interval and rate table were also left out."
+    },
+    "Tomato___Early_blight": {
+      "class_id": 29,
+      "crop": "Tomato",
+      "disease_name": "Early blight",
+      "pathogen": "Alternaria solani",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Brown to black leaf spots with concentric rings (bull's-eye / target pattern), often with a yellow margin",
+        "Leaf spots are leathery and usually appear on older (lower) leaves first",
+        "Stem lesions may occur; fruit infected near the calyx/stem end show sunken, dry lesions with concentric rings"
+      ],
+      "cultural_practices": [
+        "Remove and destroy crop debris (fungus survives on infected plant debris)",
+        "Practise crop rotation so infected debris decomposes",
+        "Destroy nightshade weeds and volunteer tomato and potato plants"
+      ],
+      "preventive_practices": [
+        "Seed treatment with the biocontrol agent Trichoderma asperellum (TNAU)",
+        "Be aware that infected seed is a primary source of spread (TNAU); spores spread by wind and splashing water",
+        "Disease favoured by warm, humid, rainy weather; free moisture needed for infection, development stops in hot dry weather"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Destroy nightshade weeds and volunteer tomato/potato plants (UC IPM).",
+          "Monitor older (lower) leaves, where spots appear first (TNAU; UC IPM)."
+        ],
+        "moderate": [
+          "Apply a fungicide when conditions favour disease and the first signs appear (UC IPM); TNAU lists several protectant and systemic options.",
+          "Alternate fungicides with different FRAC mode-of-action groups (UC IPM)."
+        ],
+        "severe": [
+          "Consult an expert on fungicide choice and timing.",
+          "After harvest, remove and destroy crop debris and rotate crops (TNAU; UC IPM)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Apply a fungicide when conditions favour disease and the first signs appear (UC IPM)",
+          "Alternate fungicides with different FRAC mode-of-action groups to manage resistance",
+          "Some fixed-copper and Bacillus subtilis products are acceptable for organic production (UC IPM)",
+          "TNAU lists several protectant and systemic fungicide options for spraying"
+        ],
+        "active_ingredients_named_by_source": [
+          "chlorothalonil",
+          "mancozeb",
+          "fixed copper",
+          "Bacillus subtilis (biological)",
+          "iprodione",
+          "azoxystrobin",
+          "metiram",
+          "pyraclostrobin",
+          "zineb",
+          "difenoconazole",
+          "tebuconazole",
+          "trifloxystrobin",
+          "Trichoderma asperellum (biocontrol seed treatment)"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Horticultural crops :: Vegetables :: Tomato - Early Blight: Alternaria solani",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_2.html"
+        },
+        {
+          "title": "Early Blight / Tomato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/tomato/early-blight/"
+        }
+      ],
+      "research_notes": "UC IPM says most California varieties are susceptible, though treatment there is rarely needed. TNAU's fungicide list gives per-acre doses and the Trichoderma seed rate; we left these out. Some TNAU entries are combination products (e.g. azoxystrobin + difenoconazole, metiram + pyraclostrobin, tebuconazole + trifloxystrobin)."
+    },
+    "Tomato___Late_blight": {
+      "class_id": 30,
+      "crop": "Tomato",
+      "disease_name": "Late blight",
+      "pathogen": "Phytophthora infestans",
+      "pathogen_type": "oomycete",
+      "vector": null,
+      "symptoms": [
+        "Small water-soaked leaf areas that rapidly enlarge into purple-brown to black, oily-looking blotches",
+        "Greyish-white sporulation (mycelium) on the leaf underside around lesions, especially in humid weather",
+        "Whole leaves die quickly; lesions spread to petioles and young stems",
+        "Fruit develop dark brown, firm lesions (often on shoulders) that can progress to rot"
+      ],
+      "cultural_practices": [
+        "Remove nearby volunteer tomato and potato plants and nightshades",
+        "Provide proper drainage",
+        "Practise crop rotation",
+        "Avoid sprinkler irrigation where possible because it favours late blight",
+        "Disc tomato fields in fall to eliminate the winter reservoir of the pathogen"
+      ],
+      "preventive_practices": [
+        "Grow varieties resistant to certain races of the pathogen where the disease occurs regularly",
+        "Check transplants to make sure they are free of late blight before planting",
+        "Soil application of Trichoderma asperellum (viride) is part of TNAU's integrated management",
+        "Disease is favoured by cool nights, warm/mild days and extended wet conditions from rain or fog with high humidity"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Late blight is favoured by cool nights and extended wet, humid conditions; inspect the crop frequently (UC IPM; TNAU).",
+          "Remove nearby volunteer tomato and potato plants and nightshades (UC IPM).",
+          "Avoid sprinkler irrigation where possible (UC IPM)."
+        ],
+        "moderate": [
+          "Protectant fungicides work best before disease develops; once an outbreak occurs, additional applications are needed with thorough coverage (UC IPM).",
+          "Rotate fungicide mode-of-action (FRAC) groups; mefenoxam-resistant strains have been reported (UC IPM)."
+        ],
+        "severe": [
+          "Whole leaves die quickly once lesions spread to petioles and stems (UC IPM; TNAU); consult an expert immediately.",
+          "After the crop, disc the field to eliminate the pathogen reservoir and practise crop rotation (UC IPM; TNAU)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Apply a protectant fungicide before disease develops; once an outbreak occurs, additional applications are needed",
+          "Coverage must be thorough for fungicide applications to work",
+          "Fungicides are generally needed only when the disease appears in a rainy period or under overhead irrigation (UC IPM)",
+          "Mefenoxam-resistant strains are widespread in California, and mefenoxam is no longer effective there (UC IPM)",
+          "Rotate fungicide mode-of-action (FRAC) groups for resistance management"
+        ],
+        "active_ingredients_named_by_source": [
+          "famoxadone + cymoxanil",
+          "dimethomorph",
+          "azoxystrobin",
+          "azoxystrobin + difenoconazole",
+          "chlorothalonil",
+          "mancozeb",
+          "pyraclostrobin",
+          "cyazofamid",
+          "zineb",
+          "Trichoderma asperellum (biocontrol, soil application)"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Horticultural crops :: Vegetables :: Tomato - Late blight: Phytophthora infestans",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_8.html"
+        },
+        {
+          "title": "Late Blight / Tomato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/tomato/late-blight/"
+        }
+      ],
+      "research_notes": "UC IPM calls P. infestans a 'fungus' in places; it is listed here as an oomycete (TNAU describes oomycete features: coenocytic hyphae, biflagellate zoospores, oospores). Both sources list per-acre rates, PHI/REI and spray intervals; we left these out."
+    },
+    "Tomato___Leaf_Mold": {
+      "class_id": 31,
+      "crop": "Tomato",
+      "disease_name": "Leaf mold",
+      "pathogen": "Passalora fulva (syn. Cladosporium fulvum)",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Pale green to yellowish spots on the upper leaf surface, starting on lower (older) leaves and moving up",
+        "Velvety olive-green to brown mould (conidia) on the lower leaf surface beneath the spots",
+        "Spots become necrotic; leaves wither, die and drop; severe cases can affect blossoms and fruit",
+        "Can be confused with magnesium deficiency and with early stages of other diseases"
+      ],
+      "cultural_practices": [
+        "Improve air circulation: adequate spacing, staking/trellising, pruning excess branches and dead leaves",
+        "Reduce humidity in greenhouses/high tunnels with fans and ventilation; avoid overhead watering; keep greenhouse night temperature above outside temperature to cut condensation",
+        "Remove and destroy infected plants (and surrounding plants in greenhouses) promptly; sanitize tools, equipment and structures between seasons",
+        "Rotate crops and move high tunnels regularly"
+      ],
+      "preventive_practices": [
+        "Plant resistant/tolerant varieties (both sources list cultivars)",
+        "Use clean seed from a reputable source (pathogen can survive on debris and possibly seed)",
+        "Disease is favoured by relative humidity above about 85%; mainly a problem in greenhouses and high tunnels"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Improve air circulation through spacing, staking and pruning excess branches and dead leaves (Cornell; UConn).",
+          "Reduce humidity in greenhouses/tunnels with ventilation; avoid overhead watering (Cornell; UConn)."
+        ],
+        "moderate": [
+          "Consult regional vegetable management guidelines for labelled products (UConn; Cornell).",
+          "The disease is favoured by relative humidity above about 85% (cited sources); ventilation that lowers humidity helps."
+        ],
+        "severe": [
+          "Remove and destroy infected plants promptly, and in greenhouses surrounding plants too (UConn).",
+          "Sanitise tools, equipment and structures between seasons; plant resistant varieties next time (Cornell; UConn)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Consult regional vegetable management guidelines for labelled products (UConn refers to the New England Vegetable Management Guide; Cornell to its Integrated Crop and Pest Management Guidelines)",
+          "Cornell reports that copper- and rhamnolipid-based organic products (Champ 30 WG, Zonix) gave the best control in its 2017-2018 organic trials",
+          "Conventional options named by Cornell include an azoxystrobin + difenoconazole product and a chlorothalonil product"
+        ],
+        "active_ingredients_named_by_source": [
+          "azoxystrobin",
+          "difenoconazole",
+          "chlorothalonil"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Tomato Leaf Mold | Cornell Vegetables",
+          "organization": "Cornell University (Cornell Vegetables, School of Integrative Plant Science)",
+          "url": "https://www.vegetables.cornell.edu/pest-management/disease-factsheets/tomato-leaf-mold/"
+        },
+        {
+          "title": "Tomato Leaf Mold | Integrated Pest Management | College of Agriculture, Health and Natural Resources | University of Connecticut",
+          "organization": "UConn Extension IPM, University of Connecticut",
+          "url": "https://ipm.cahnr.uconn.edu/tomato-leaf-mold/"
+        }
+      ],
+      "research_notes": "There is no TNAU page for tomato leaf mold. University of Minnesota Extension pages returned HTTP 403 and were dropped. Cornell names products (Champ 30 WG, Zonix, Quadris Top, Bravo Weather Stik); only the active ingredients Cornell spells out are listed. Cornell says the fungus favours 'humid, dry conditions', which is odd wording. The cultivar lists on both pages were not copied."
+    },
+    "Tomato___Septoria_leaf_spot": {
+      "class_id": 32,
+      "crop": "Tomato",
+      "disease_name": "Septoria leaf spot",
+      "pathogen": "Septoria lycopersici",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Numerous small, round to irregular spots with grey/light-tan to white centres and dark margins, mostly on older (lower) leaves",
+        "Tiny black fruiting bodies (pycnidia) visible in the centre of older lesions",
+        "Spots coalesce, leaves yellow, brown and wither; rapid defoliation if untreated",
+        "Stems and flowers may also be affected"
+      ],
+      "cultural_practices": [
+        "Remove and destroy affected plant parts; remove infected leaves as they appear in small plantings",
+        "At season end remove as much tomato debris as possible and till in fall to break up remaining debris",
+        "Rotate away from tomatoes and potatoes (ISU suggests 3-4 years)",
+        "Where long rotation is not feasible, use an organic mulch layer after transplanting as a barrier to spore release",
+        "Improve air movement through spacing, sucker pruning and trellising; reduce overhead watering"
+      ],
+      "preventive_practices": [
+        "Seed treatment with the biocontrol agent Trichoderma asperellum (TNAU)",
+        "Good garden sanitation to cut overwintering inoculum on infected debris",
+        "Disease is favoured by high humidity; spores spread by rain splash or wind"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Remove infected leaves as they appear in small plantings (Iowa State).",
+          "Improve air movement through spacing, sucker pruning and trellising; reduce overhead watering (Iowa State)."
+        ],
+        "moderate": [
+          "Fungicide sprays are likely needed once the disease is present, but are seldom effective alone without other management tactics (Iowa State).",
+          "Use an organic mulch layer as a barrier to spore splash where long rotation is not feasible (Iowa State)."
+        ],
+        "severe": [
+          "Spots coalesce and cause rapid defoliation if untreated (TNAU); consult an expert.",
+          "At season end remove as much tomato debris as possible and rotate away from tomatoes and potatoes for 3-4 years (Iowa State)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Fungicide sprays are likely needed once the disease is present; many products are labelled",
+          "Fungicides are seldom effective alone without other management tactics (ISU)",
+          "Often only preventative application is effective; read and follow all label directions"
+        ],
+        "active_ingredients_named_by_source": [
+          "fluxapyroxad + pyraclostrobin",
+          "Trichoderma asperellum (biocontrol seed treatment)"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Horticultural crops :: Vegetables :: Tomato - Septoria Leaf Spot: Septoria lycopersici",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_4.html"
+        },
+        {
+          "title": "Septoria Leaf Spot | Yard and Garden",
+          "organization": "Iowa State University Extension and Outreach (Yard and Garden encyclopedia)",
+          "url": "https://yardandgarden.extension.iastate.edu/encyclopedia/septoria-leaf-spot"
+        }
+      ],
+      "research_notes": "TNAU gives a per-hectare dose for fluxapyroxad + pyraclostrobin and a Trichoderma seed rate; we left both out. The Iowa State page is written for home gardens."
+    },
+    "Tomato___Spider_mites Two-spotted_spider_mite": {
+      "class_id": 33,
+      "crop": "Tomato",
+      "disease_name": "Two-spotted spider mite",
+      "pathogen": "Tetranychus urticae (two-spotted spider mite)",
+      "pathogen_type": "arthropod_pest",
+      "vector": null,
+      "symptoms": [
+        "Fine white-to-yellow stippling/speckling on leaves from sap feeding, often mottled",
+        "Leaves bronze, turn reddish-brown or brown, dry up and may curl; yellowing and leaf drop can expose fruit to sunscald",
+        "Silken webbing on leaf undersides under heavy infestations",
+        "Flower and fruit formation can be affected under severe infestation (TNAU)"
+      ],
+      "cultural_practices": [
+        "Inspect new plants regularly before bringing them into a growing area",
+        "Scout leaf undersides with a hand lens, or shake plants over white paper to detect mites",
+        "Physically spray plants with high-pressure water to dislodge mites"
+      ],
+      "preventive_practices": [
+        "Encourage natural enemies such as lady beetles (Stethorus spp.), lacewings and predatory thrips",
+        "Be aware that warm, dry conditions (and protected structures that limit rain splash) favour rapid mite reproduction"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Scout leaf undersides with a hand lens, or shake plants over white paper (UConn).",
+          "Spray plants with high-pressure water to dislodge mites (UConn)."
+        ],
+        "moderate": [
+          "Insecticidal soaps and horticultural oils are effective with minimal impact on beneficials but need direct contact and repeat applications (UConn).",
+          "Encourage natural enemies such as lady beetles, lacewings and predatory thrips (UConn)."
+        ],
+        "severe": [
+          "Use miticides (not fungicides) with thorough coverage of leaf undersides, rotating modes of action to prevent resistance (UConn); consult an expert on product choice.",
+          "Warm, dry conditions favour rapid mite build-up; act quickly (UConn)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "Use miticides with thorough coverage of leaf undersides",
+          "Rotate miticides with different modes of action to prevent resistance",
+          "Insecticidal soaps and horticultural oils are effective with minimal impact on beneficials but need direct contact and repeat applications",
+          "Consult regional vegetable management guides for crop-specific products"
+        ],
+        "active_ingredients_named_by_source": [
+          "abamectin",
+          "bifenazate",
+          "sulfur-based products",
+          "wettable sulphur",
+          "insecticidal soap",
+          "horticultural oil (e.g. neem oil)"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null,
+        "note": "This is a mite pest: miticides/acaricides apply, not fungicides."
+      },
+      "sources": [
+        {
+          "title": "Tomato - Spider Mites | Integrated Pest Management | College of Agriculture, Health and Natural Resources | University of Connecticut",
+          "organization": "UConn Extension IPM, University of Connecticut",
+          "url": "https://ipm.cahnr.uconn.edu/tomato-spider-mites/"
+        },
+        {
+          "title": "Red spider mite: Tetranychus spp (tomato)",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato/tomato_7.html"
+        }
+      ],
+      "research_notes": "This is an arachnid pest, not a pathogen; the 'pathogen' field holds the pest name. The UConn page names Tetranychus urticae. The TNAU page covers 'Red spider mite: Tetranychus spp' on tomato at genus level and does not name T. urticae; its only control is wettable sulphur, and we left out the rate. An earlier search snippet said this TNAU page also mentions dicofol; the fetched page does not, so dicofol is not listed. UC IPM's tomato guidelines have no spider-mite page (we checked the index)."
+    },
+    "Tomato___Target_Spot": {
+      "class_id": 34,
+      "crop": "Tomato",
+      "disease_name": "Target spot",
+      "pathogen": "Corynespora cassiicola",
+      "pathogen_type": "fungal",
+      "vector": null,
+      "symptoms": [
+        "Leaf lesions begin as dark brown pinpoint spots, nearly identical to early bacterial spot",
+        "Lesions enlarge with light brown to grey centres and dark concentric rings, sometimes with diffuse yellowing; easily confused with early blight or gray leaf spot",
+        "Lesions coalesce, causing blighting and premature defoliation; disease often starts in the inner canopy",
+        "Petiole/stem lesions dark brown and oval; fruit get sunken, pitted lesions that may crack in an 'X' or star pattern"
+      ],
+      "cultural_practices": [
+        "Rotate tomato fields with non-solanaceous crops",
+        "Eliminate weeds (especially Solanaceae), volunteers and plant debris that harbour inoculum"
+      ],
+      "preventive_practices": [
+        "Start with clean, healthy transplants",
+        "No commercial tomato varieties with resistance to target spot are currently available; varietal differences are only degrees of susceptibility",
+        "Disease is favoured by warm temperatures, high humidity and prolonged leaf wetness; a dense canopy holds moisture"
+      ],
+      "severity_recommendations": {
+        "mild": [
+          "Disease often starts in the inner canopy and is favoured by prolonged leaf wetness; avoid dense canopies (UF/IFAS).",
+          "Eliminate solanaceous weeds and volunteers that harbour inoculum (UF/IFAS)."
+        ],
+        "moderate": [
+          "With no resistant varieties available, routine protective fungicides are the main control in Florida (UF/IFAS); reduced efficacy of QoI and variable SDHI control have been reported, so rotate modes of action."
+        ],
+        "severe": [
+          "Even effective fungicides may struggle when weather strongly favours the disease (UF/IFAS); consult an expert.",
+          "Rotate tomato fields with non-solanaceous crops and remove plant debris (UF/IFAS)."
+        ]
+      },
+      "no_curative_chemical": false,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "With no host resistance available, routine application of protective fungicides is the main control in Florida; significant losses are expected without fungicides",
+          "Even effective fungicides may struggle when weather strongly favours the disease",
+          "Reduced efficacy of the QoI (FRAC 11) fungicide azoxystrobin has been reported, and control with QoI and SDHI (FRAC 7) fungicides varies",
+          "Loss of SDHI fungicides to resistance would seriously hamper management; fungicide-resistant isolates may carry over between seasons",
+          "Biopesticides are listed in the Vegetable Production Handbook of Florida"
+        ],
+        "active_ingredients_named_by_source": [
+          "benzovindiflupyr",
+          "chlorothalonil",
+          "cyprodinil",
+          "difenoconazole",
+          "fludioxonil",
+          "fluopyram",
+          "flutriafol",
+          "fluxapyroxad",
+          "mancozeb",
+          "pyrimethanil",
+          "azoxystrobin (noted for reduced efficacy)"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "PP351/PP351: Target Spot of Tomato in Florida",
+          "organization": "UF/IFAS Extension (EDIS), University of Florida",
+          "url": "https://ask.ifas.ufl.edu/publication/PP351"
+        }
+      ],
+      "review_status": "Single verified source (Florida-specific).",
+      "research_notes": "Only one verified source; TNAU has no target spot page. edis.ifas.ufl.edu/publication/PP351 redirects to ask.ifas.ufl.edu, which needs cookies to load. The guidance is Florida-specific."
+    },
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+      "class_id": 35,
+      "crop": "Tomato",
+      "disease_name": "Tomato yellow leaf curl virus",
+      "pathogen": "Tomato yellow leaf curl virus (TYLCV), a geminivirus (family Geminiviridae)",
+      "pathogen_type": "viral",
+      "vector": "Whitefly Bemisia tabaci (sweetpotato/silverleaf whitefly, B. tabaci MEAM1; MED also present in Florida)",
+      "symptoms": [
+        "Stunted, erect/upright growth; plants infected early are severely stunted",
+        "Small leaves that curl upward with strong crumpling and interveinal and marginal yellowing (bright yellow leaf margins)",
+        "Shortened internodes giving a bushy appearance; flowers often drop and fruit yield falls sharply"
+      ],
+      "cultural_practices": [
+        "Rogue (remove) diseased plants while incidence is low",
+        "Practise good weed management in and around fields (weeds such as nightshade and jimsonweed can be hosts)",
+        "Promptly destroy harvested tomato fields, old crop residue and volunteers; UF calls this the most effective way to cut whitefly numbers and virus inoculum",
+        "Use a regional host-free period where there is no true winter",
+        "Avoid planting new fields near older (especially infected) fields"
+      ],
+      "preventive_practices": [
+        "Select TYLCV-resistant/tolerant varieties (UF notes tolerant varieties can still be infected and lose yield under high virus pressure)",
+        "Use virus- and whitefly-free transplants; do not import transplants from areas known to have the virus",
+        "Cover plants with fine-mesh floating row covers to exclude whiteflies",
+        "Metalized (reflective) plastic mulch can repel whiteflies and reduce early-season transmission",
+        "Plant right after a tomato-free period or a true winter season"
+      ],
+      "severity_recommendations": null,
+      "management": [
+        "Rogue (remove) diseased plants while incidence is low (UC IPM; UF/IFAS).",
+        "Promptly destroy old crops, crop residue and volunteers after harvest; UF/IFAS calls this the most effective way to cut whitefly numbers and virus inoculum.",
+        "Avoid planting new fields near older, infected fields (UF/IFAS)."
+      ],
+      "vector_management": [
+        "Management targets the whitefly vector Bemisia tabaci, not the virus (UC IPM; UF/IFAS).",
+        "Use fine-mesh row covers and reflective mulch to reduce early-season transmission (UC IPM; UF/IFAS).",
+        "Whiteflies have developed resistance to several insecticides; rotate modes of action and spray only when needed (UF/IFAS)."
+      ],
+      "no_curative_chemical": true,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "No chemical treatment for the virus itself is given; management targets the whitefly vector",
+          "Systemic insecticides (e.g. IRAC Group 4 neonicotinoids/butenolides, Group 28 diamides) are key whitefly tools; translaminar and contact products are also used",
+          "Whiteflies (B. tabaci) have developed resistance to several insecticides (e.g. imidacloprid, thiamethoxam, spirotetramat in Florida); rotate modes of action and spray only when needed",
+          "Biopesticides such as insecticidal soap and mineral oil can help suppress whiteflies; kaolin clay gave variable results"
+        ],
+        "active_ingredients_named_by_source": [
+          "dinotefuran",
+          "imidacloprid",
+          "thiamethoxam",
+          "flupyradifurone",
+          "cyantraniliprole",
+          "afidopyropen",
+          "pymetrozine",
+          "pyrifluquinazon",
+          "pyriproxyfen",
+          "buprofezin",
+          "spirotetramat",
+          "bifenthrin",
+          "azadirachtin",
+          "insecticidal soap",
+          "mineral oil",
+          "kaolin clay"
+        ],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Tomato Yellow Leaf Curl / Tomato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/tomato/tomato-yellow-leaf-curl/"
+        },
+        {
+          "title": "ENY2111/IN1430: Managing Bemisia tabaci MEAM1 (Gennadius) (Hemiptera: Aleyrodidae) and Tomato yellow leaf curl virus in Florida Tomato",
+          "organization": "UF/IFAS Extension (EDIS), University of Florida",
+          "url": "https://ask.ifas.ufl.edu/publication/IN1430"
+        }
+      ],
+      "research_notes": "no_curative_chemical=true is inferred: both sources prescribe only roguing, sanitation, resistant/tolerant varieties and vector control, and neither offers a virus-targeted chemical; neither says 'no cure' in so many words. The insecticides listed are for the whitefly vector, not the virus. A related TNAU page (https://agritech.tnau.ac.in/crop_protection/tomato_diseases_6.html, 'Leaf curl: Tomato leaf curl virus (TLCV)', vector Bemisia tabaci) was fetched, but it covers ToLCV, a different leaf-curl virus. It is left out of sources but may suit Indian context: nursery under protected conditions, sorghum/maize/bajra barrier crops, yellow sticky traps, removing the weed host Abutilon indicum, insecticide sprays."
+    },
+    "Tomato___Tomato_mosaic_virus": {
+      "class_id": 36,
+      "crop": "Tomato",
+      "disease_name": "Tomato mosaic virus",
+      "pathogen": "Tomato mosaic virus (ToMV), a tobamovirus (UC IPM covers it together with Tobacco mosaic virus)",
+      "pathogen_type": "viral",
+      "vector": null,
+      "symptoms": [
+        "Mild mosaic / green mottling on leaves, sometimes curled, stunted or slightly deformed",
+        "Leaf malformation including a fern-like appearance; shoestring-like leaves can occur in cool weather",
+        "Plants often stunted and somewhat yellowed; necrotic patterns may develop on fruit"
+      ],
+      "cultural_practices": [
+        "Extreme sanitation is needed; the viruses are easily transmitted mechanically by hands, tools, clothing and equipment",
+        "Immediately remove and destroy infected plants",
+        "Wash hands frequently with soap and water when handling plants; do not handle plants after using tobacco products",
+        "Be aware that tobamoviruses are very stable and can survive in plant debris for years"
+      ],
+      "preventive_practices": [
+        "Use seed treated to eliminate seedborne inoculum",
+        "Grow cultivars with genetic resistance to specific tomato-infecting tobamoviruses",
+        "Be aware that infections are common in transplants and handled/trained plants and seldom seen in direct-seeded fields (UC IPM)"
+      ],
+      "severity_recommendations": null,
+      "management": [
+        "Immediately remove and destroy infected plants (UC IPM; WSU).",
+        "Extreme sanitation is required: the virus spreads mechanically on hands, tools, clothing and equipment (UC IPM).",
+        "Wash hands with soap and water when handling plants; do not handle plants after using tobacco products (UC IPM; WSU)."
+      ],
+      "vector_management": [
+        "Tobamoviruses have no insect vector, so insecticides are not part of control (UC IPM)."
+      ],
+      "no_curative_chemical": true,
+      "chemical_guidance": {
+        "generic_guidance": [
+          "No chemical management is recommended (WSU)",
+          "Tobamoviruses have no insect, nematode or fungal vectors, so insecticides are not part of control (UC IPM)"
+        ],
+        "active_ingredients_named_by_source": [],
+        "verification_status": "requires_expert_review",
+        "dosage": null,
+        "interval": null
+      },
+      "sources": [
+        {
+          "title": "Tobacco Mosaic / Tomato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/tomato/tobacco-mosaic/"
+        },
+        {
+          "title": "Tomato: Mosaic viruses",
+          "organization": "Washington State University Extension (HortSense, WSU CAHNRS)",
+          "url": "https://hortsense.cahnrs.wsu.edu/fact-sheet/tomato-mosaic-viruses/"
+        }
+      ],
+      "research_notes": "Both sources treat ToMV together with TMV; WSU also covers CMV (aphid-transmitted), so CMV-specific advice such as aphid control was left out. The disease is spread mechanically and through seed and debris; it has no vector. WSU's resistant cultivar list is for TMV and was not copied. TNAU's tomato 'Mosaic' page covers Cucumber mosaic virus, not ToMV, so it was not used."
+    },
+    "Tomato___healthy": {
+      "class_id": 37,
+      "crop": "Tomato",
+      "disease_name": "Healthy",
+      "pathogen": null,
+      "pathogen_type": "none",
+      "symptoms": [],
+      "preventive_practices": [
+        "Use disease-free seed and transplants (UC IPM; TNAU).",
+        "Avoid overhead irrigation and give plants space and support for air movement (UC IPM; Iowa State).",
+        "Rotate with non-solanaceous crops and remove volunteer tomato/potato plants and nightshade weeds (UC IPM).",
+        "Scout regularly, checking older leaves and leaf undersides (UC IPM; UConn)."
+      ],
+      "cultural_practices": [],
+      "sources": [
+        {
+          "title": "Bacterial Spot / Tomato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/tomato/bacterial-spot/"
+        },
+        {
+          "title": "Horticultural crops :: Vegetables :: Tomato - Bacterial leaf spot: Xanthomonas axonopodis pv. vesicatoria",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_11.html"
+        },
+        {
+          "title": "Horticultural crops :: Vegetables :: Tomato - Late blight: Phytophthora infestans",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_8.html"
+        },
+        {
+          "title": "Late Blight / Tomato / Agriculture: Pest Management Guidelines / UC Statewide IPM Program (UC IPM)",
+          "organization": "UC Statewide IPM Program (UC IPM), University of California Agriculture and Natural Resources",
+          "url": "https://ipm.ucanr.edu/agriculture/tomato/late-blight/"
+        },
+        {
+          "title": "Horticultural crops :: Vegetables :: Tomato - Septoria Leaf Spot: Septoria lycopersici",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_4.html"
+        },
+        {
+          "title": "Septoria Leaf Spot | Yard and Garden",
+          "organization": "Iowa State University Extension and Outreach (Yard and Garden encyclopedia)",
+          "url": "https://yardandgarden.extension.iastate.edu/encyclopedia/septoria-leaf-spot"
+        },
+        {
+          "title": "Tomato - Spider Mites | Integrated Pest Management | College of Agriculture, Health and Natural Resources | University of Connecticut",
+          "organization": "UConn Extension IPM, University of Connecticut",
+          "url": "https://ipm.cahnr.uconn.edu/tomato-spider-mites/"
+        },
+        {
+          "title": "Red spider mite: Tetranychus spp (tomato)",
+          "organization": "TNAU Agritech Portal, Tamil Nadu Agricultural University (Coimbatore)",
+          "url": "https://agritech.tnau.ac.in/crop_protection/tomato/tomato_7.html"
+        }
+      ]
+    }
+  }
+}
